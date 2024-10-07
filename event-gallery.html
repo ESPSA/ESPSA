@@ -65,47 +65,169 @@
             bottom: -5px;
             border-radius: 2px;
         }
+
+        /* Back to Top Button Styling */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: none;
+            background-color: #dc3545;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50%;
+            text-align: center;
+            z-index: 1000;
+            transition: display 0.3s;
+        }
+
+        .back-to-top.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
         <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="images/logo.png" alt="ESPSA Logo" width="40" height="40" class="d-inline-block align-text-top">
-          ESPSA
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="competition.html">Competition</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="events.html">Events</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="podcasts.html">Podcasts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
-            </li>
-          </ul>
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="ESPSA Logo" width="40" height="40" class="d-inline-block align-text-top">
+                ESPSA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="competition.html">Competition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="podcasts.html">Podcasts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- Event Gallery Content -->
     <main class="container my-5 pt-5">
         <h1 class="mb-4 section-title">Event Gallery</h1>
         <div id="gallery-content">
-            <!-- Dynamic Gallery Content Will Be Injected Here -->
+            <!-- Embedded Gallery for Medical Covoney 2024 -->
+            <h2 class="mb-4 text-center">Medical Covoney 2024</h2>
+            <div class="row gallery">
+                <!-- Image 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="images/gallery/science-fair1.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 1">
+                            <img src="images/gallery/science-fair1.jpg" alt="Medical Covoney 2024 Image 1" class="img-fluid rounded">
+                            <div class="description">Image 1</div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="images/gallery/1.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 2">
+                            <img src="images/gallery/1.jpg" alt="Medical Covoney 2024 Image 2" class="img-fluid rounded">
+                            <div class="description">Image 2</div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="images/gallery/2.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 3">
+                            <img src="images/gallery/2.jpg" alt="Medical Covoney 2024 Image 3" class="img-fluid rounded">
+                            <div class="description">Image 3</div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="images/gallery/3.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 4">
+                            <img src="images/gallery/3.jpg" alt="Medical Covoney 2024 Image 4" class="img-fluid rounded">
+                            <div class="description">Image 4</div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="images/gallery/4.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 5">
+                            <img src="images/gallery/4.jpg" alt="Medical Covoney 2024 Image 5" class="img-fluid rounded">
+                            <div class="description">Image 5</div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="images/gallery/5.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 6">
+                            <img src="images/gallery/5.jpg" alt="Medical Covoney 2024 Image 6" class="img-fluid rounded">
+                            <div class="description">Image 6</div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image 7 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="images/gallery/6.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 7">
+                            <img src="images/gallery/6.jpg" alt="Medical Covoney 2024 Image 7" class="img-fluid rounded">
+                            <div class="description">Image 7</div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image 8 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="images/gallery/7.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 8">
+                            <img src="images/gallery/7.jpg" alt="Medical Covoney 2024 Image 8" class="img-fluid rounded">
+                            <div class="description">Image 8</div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image 9 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="images/gallery/8.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 9">
+                            <img src="images/gallery/8.jpg" alt="Medical Covoney 2024 Image 9" class="img-fluid rounded">
+                            <div class="description">Image 9</div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image 10 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="images/gallery/9.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 10">
+                            <img src="images/gallery/9.jpg" alt="Medical Covoney 2024 Image 10" class="img-fluid rounded">
+                            <div class="description">Image 10</div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image 11 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="images/gallery/10.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 11">
+                            <img src="images/gallery/10.jpg" alt="Medical Covoney 2024 Image 11" class="img-fluid rounded">
+                            <div class="description">Image 11</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Embedded Gallery -->
         </div>
     </main>
     <!-- Footer -->
@@ -168,26 +290,8 @@
             return urlParams.get(param);
         }
 
-        // Event Gallery Data
-const eventData = {
-    'medical covoney 2024': {
-        title: 'Medical Covoney 2024',
-        images: [
-            'images/gallery/science-fair1.jpg',
-            'images/gallery/1.jpg',
-            'images/gallery/2.jpg',
-            'images/gallery/3.jpg',
-            'images/gallery/4.jpg',
-            'images/gallery/5.jpg',
-            'images/gallery/6.jpg',
-            'images/gallery/7.jpg',
-            'images/gallery/8.jpg',
-            'images/gallery/9.jpg',
-            'images/gallery/10.jpg',
-            'images/gallery/11.jpg',
-            // Add more images as needed
-        ]
-    },
+        // Event Gallery Data (excluding the first event)
+        const eventData = {
             'ESPSA (Research Rally Competition) 2024': {
                 title: 'ESPSA (Research Rally Competition) 2024',
                 images: [
@@ -213,6 +317,9 @@ const eventData = {
             const galleryContent = document.getElementById('gallery-content');
 
             if (eventKey && eventData[eventKey]) {
+                // Clear the embedded gallery
+                galleryContent.innerHTML = '';
+
                 const event = eventData[eventKey];
                 const title = document.createElement('h2');
                 title.textContent = event.title;
@@ -251,13 +358,8 @@ const eventData = {
                 });
 
                 galleryContent.appendChild(galleryRow);
-            } else {
-                // If no event is specified or event not found
-                const message = document.createElement('p');
-                message.textContent = 'No event selected or event not found.';
-                message.classList.add('text-center', 'mt-5');
-                galleryContent.appendChild(message);
             }
+            // If no event is specified or event not found, the embedded gallery remains
         });
     </script>
 </body>
