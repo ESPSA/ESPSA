@@ -112,6 +112,22 @@
             margin-bottom: 15px;
         }
 
+        /* Winners Section Styles */
+        .winners-section .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .winners-section .card-title {
+            font-family: 'Oswald', sans-serif;
+            color: #f7031c;
+        }
+
+        .winners-section .card-text {
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
         /* Back to Top Button Styles */
         .back-to-top {
             position: fixed;
@@ -162,9 +178,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="events.html">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="podcast.html">podcast</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
@@ -278,7 +291,54 @@
             </div>
         </section>
 
-
+        <!-- Winners Section -->
+        <section class="winners-section py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center section-title">Winners</h2>
+                <div class="row g-4">
+                    <!-- Winner 1 -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card text-center shadow-sm">
+                            <img src="images/1.jpg" class="card-img-top" alt="Trash to Treasure">
+                            <div class="card-body">
+                                <h5 class="card-title">1st Place</h5>
+                                <p class="card-text">Trash to Treasure</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Winner 2 -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card text-center shadow-sm">
+                            <img src="images/2.jpg" class="card-img-top" alt="The Jenner">
+                            <div class="card-body">
+                                <h5 class="card-title">2nd Place</h5>
+                                <p class="card-text">The Jenner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Winner 3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card text-center shadow-sm">
+                            <img src="images/3.jpg" class="card-img-top" alt="4P">
+                            <div class="card-body">
+                                <h5 class="card-title">3rd Place</h5>
+                                <p class="card-text">4P</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Winner 4 -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card text-center shadow-sm">
+                            <img src="images/4.jpg" class="card-img-top" alt="Beyond the Label">
+                            <div class="card-body">
+                                <h5 class="card-title">3rd Place</h5>
+                                <p class="card-text">Beyond the Label</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Event Timeline Section -->
         <section class="timeline-section py-5 bg-light">
@@ -303,9 +363,7 @@
             </div>
         </section>
 
-
     </main>
-
 
     <!-- Footer -->
     <footer class="bg-black text-white py-4">
