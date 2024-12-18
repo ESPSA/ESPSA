@@ -30,6 +30,8 @@
             border-radius: 10px;
         }
 
+        /* Removed the description overlay styles */
+        /* 
         .gallery-item .description {
             position: absolute;
             bottom: 0;
@@ -45,6 +47,7 @@
         .gallery-item:hover .description {
             opacity: 1;
         }
+        */
 
         /* Section Title Styling */
         .section-title {
@@ -78,11 +81,45 @@
             border-radius: 50%;
             text-align: center;
             z-index: 1000;
-            transition: display 0.3s;
+            transition: opacity 0.3s ease;
         }
 
         .back-to-top.active {
             display: block;
+            opacity: 0.7;
+        }
+
+        .back-to-top:hover {
+            opacity: 1;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Description Section Styles */
+        .competition-description {
+            padding: 40px 0;
+            background-color: #f8f9fa;
+        }
+
+        .competition-description h2 {
+            margin-bottom: 20px;
+            font-family: 'Oswald', sans-serif;
+            color: #dc3545;
+        }
+
+        .competition-description p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .competition-description ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .competition-description ul li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -109,10 +146,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="events.html">Events</a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="podcast.html">Podcast</a>
                     </li>
-                    
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
@@ -125,78 +161,88 @@
     <main class="container my-5 pt-5">
         <h1 class="mb-4 section-title">Event Gallery</h1>
         <div id="gallery-content">
-            <!-- Embedded Gallery for Medical Covoney 2024 -->
-            <h2 class="mb-4 text-center">Medical Covoney 2024</h2>
+            <!-- Medical Convoy 2024 Description Section -->
+            <section class="competition-description">
+                <div class="container">
+                    <h2>Medical Convoy 2024</h2>
+                    <p>Under the supervision of the PharmD program at E-JUST, an impactful medical convoy was held in Al-Ula Village, Borg Al-Arab, for complete assistance in providing free-of-cost medications among villagers. Medical convoys are one of the most important modalities for bringing healthcare to the doorsteps of people in far-flung areas and thus narrowing the gap between providers of healthcare and the populace.</p>
+                    
+                    <p>This is a great step undertaken by the PharmD at E-JUST to bring in positive changes in health and well-being among villagers. Such initiatives make available the needed medical facilities and showcase community outreach and service in the stream of pharmacy. It is through this direct involvement with the community that the program shows how deeply committed it is to fostering public health and empowering people through accessible healthcare solutions.</p>
+                </div>
+            </section>
+
+            <!-- Embedded Gallery for Medical Convoy 2024 -->
+            <h2 class="mb-4 text-center">Medical Convoy 2024</h2>
             <div class="row gallery">
                 <!-- Image 1 -->
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <a href="images/gallery/science-fair1.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 1">
-                            <img src="images/gallery/science-fair1.jpg" alt="Medical Covoney 2024 Image 1" class="img-fluid rounded">
-                            <div class="description">Image 1</div>
+                        <a href="images/gallery/science-fair1.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 1">
+                            <img src="images/gallery/science-fair1.jpg" alt="Medical Convoy 2024 Image 1" class="img-fluid rounded" loading="lazy">
+                            <!-- Description Removed -->
                         </a>
                     </div>
                 </div>
                 <!-- Image 2 -->
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <a href="images/gallery/science-fair2.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 2">
-                            <img src="images/gallery/science-fair2.jpg" alt="Medical Covoney 2024 Image 2" class="img-fluid rounded">
-                            <div class="description">Image 2</div>
+                        <a href="images/gallery/science-fair2.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 2">
+                            <img src="images/gallery/science-fair2.jpg" alt="Medical Convoy 2024 Image 2" class="img-fluid rounded" loading="lazy">
+                            <!-- Description Removed -->
                         </a>
                     </div>
                 </div>
                 <!-- Image 3 -->
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <a href="images/gallery/science-fair3.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 3">
-                            <img src="images/gallery/science-fair3.jpg" alt="Medical Covoney 2024 Image 3" class="img-fluid rounded">
-                            <div class="description">Image 3</div>
+                        <a href="images/gallery/science-fair3.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 3">
+                            <img src="images/gallery/science-fair3.jpg" alt="Medical Convoy 2024 Image 3" class="img-fluid rounded" loading="lazy">
+                            <!-- Description Removed -->
                         </a>
                     </div>
                 </div>
                 <!-- Image 4 -->
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <a href="images/gallery/science-fair4.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 4">
-                            <img src="images/gallery/science-fair4.jpg" alt="Medical Covoney 2024 Image 4" class="img-fluid rounded">
-                            <div class="description">Image 4</div>
+                        <a href="images/gallery/science-fair4.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 4">
+                            <img src="images/gallery/science-fair4.jpg" alt="Medical Convoy 2024 Image 4" class="img-fluid rounded" loading="lazy">
+                            <!-- Description Removed -->
                         </a>
                     </div>
                 </div>
                 <!-- Image 5 -->
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <a href="images/gallery/science-fair5.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 5">
-                            <img src="images/gallery/science-fair5.jpg" alt="Medical Covoney 2024 Image 5" class="img-fluid rounded">
-                            <div class="description">Image 5</div>
+                        <a href="images/gallery/science-fair5.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 5">
+                            <img src="images/gallery/science-fair5.jpg" alt="Medical Convoy 2024 Image 5" class="img-fluid rounded" loading="lazy">
+                            <!-- Description Removed -->
                         </a>
                     </div>
                 </div>
                 <!-- Image 6 -->
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <a href="images/gallery/science-fair6.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 6">
-                            <img src="images/gallery/science-fair6.jpg" alt="Medical Covoney 2024 Image 6" class="img-fluid rounded">
-                            <div class="description">Image 6</div>
+                        <a href="images/gallery/science-fair6.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 6">
+                            <img src="images/gallery/science-fair6.jpg" alt="Medical Convoy 2024 Image 6" class="img-fluid rounded" loading="lazy">
+                            <!-- Description Removed -->
                         </a>
                     </div>
                 </div>
                 <!-- Image 7 -->
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <a href="images/gallery/science-fair7.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 7">
-                            <img src="images/gallery/science-fair7.jpg" alt="Medical Covoney 2024 Image 7" class="img-fluid rounded">
-                            <div class="description">Image 7</div>
+                        <a href="images/gallery/science-fair7.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 7">
+                            <img src="images/gallery/science-fair7.jpg" alt="Medical Convoy 2024 Image 7" class="img-fluid rounded" loading="lazy">
+                            <!-- Description Removed -->
                         </a>
                     </div>
                 </div>
                 <!-- Image 8 -->
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <a href="images/gallery/science-fair8.jpg" data-lightbox="event-gallery" data-title="Medical Covoney 2024 - Image 8">
-                            <img src="images/gallery/science-fair8.jpg" alt="Medical Covoney 2024 Image 8" class="img-fluid rounded">
-                            <div class="description">Image 8</div>
+                        <a href="images/gallery/science-fair8.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 8">
+                            <img src="images/gallery/science-fair8.jpg" alt="Medical Convoy 2024 Image 8" class="img-fluid rounded" loading="lazy">
+                            <!-- Description Removed -->
                         </a>
                     </div>
                 </div>
@@ -248,13 +294,13 @@
     <!-- Custom JS for Back to Top button -->
     <script>
         const backToTopButton = document.getElementById('back-to-top');
-        window.onscroll = function() {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
                 backToTopButton.classList.add('active');
             } else {
                 backToTopButton.classList.remove('active');
             }
-        };
+        });
 
         backToTopButton.onclick = function() {
             window.scrollTo({top: 0, behavior: 'smooth'});
@@ -262,3 +308,4 @@
     </script>
 </body>
 </html>
+
