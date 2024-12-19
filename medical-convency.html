@@ -30,24 +30,7 @@
             border-radius: 10px;
         }
 
-        /* Removed the description overlay styles */
-        /* 
-        .gallery-item .description {
-            position: absolute;
-            bottom: 0;
-            background: rgba(220,53,69,0.8);
-            color: #fff;
-            width: 100%;
-            text-align: center;
-            padding: 10px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .gallery-item:hover .description {
-            opacity: 1;
-        }
-        */
+        /* Description overlay removed */
 
         /* Section Title Styling */
         .section-title {
@@ -95,40 +78,98 @@
             color: #fff;
         }
 
-        /* Description Section Styles */
-        .competition-description {
+        /* Combined Event Overview Section Styles */
+        .event-overview {
             padding: 40px 0;
             background-color: #f8f9fa;
         }
 
-        .competition-description h2 {
-            margin-bottom: 20px;
-            font-family: 'Oswald', sans-serif;
-            color: #dc3545;
-        }
-
-        .competition-description p {
+        .event-overview p {
             margin-bottom: 15px;
             line-height: 1.6;
         }
 
-        .competition-description ul {
+        .event-overview ul {
             list-style-type: disc;
             padding-left: 20px;
             margin-bottom: 15px;
         }
 
-        .competition-description ul li {
+        .event-overview ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Sponsors Section */
+        .sponsors-section {
+            padding: 40px 0;
+            background-color: #f8f9fa;
+        }
+
+        .sponsors-section h2 {
+            margin-bottom: 20px;
+            font-family: 'Oswald', sans-serif;
+            color: #dc3545;
+            text-align: center;
+        }
+
+        .sponsors-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .sponsors-logo img {
+            max-width: 150px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Event Details Section */
+        .event-details-section {
+            padding: 40px 0;
+            background-color: #ffffff;
+        }
+
+        .event-details-section h2 {
+            margin-bottom: 20px;
+            font-family: 'Oswald', sans-serif;
+            color: #dc3545;
+            text-align: center;
+        }
+
+        .event-details {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .event-details p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .event-details ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .event-details ul li {
             margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="ESPSA Logo" width="40" height="40" class="d-inline-block align-text-top">
+                <img src="https://i.ibb.co/hfbKPcG/logo-1.png" alt="ESPSA Logo" width="40" height="40" class="d-inline-block align-text-top">
                 ESPSA
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -161,96 +202,138 @@
     <main class="container my-5 pt-5">
         <h1 class="mb-4 section-title">Event Gallery</h1>
         <div id="gallery-content">
-            <!-- Medical Convoy 2024 Description Section -->
-            <section class="competition-description">
+            <!-- Combined Event Overview Section -->
+            <section class="event-overview">
                 <div class="container">
-                    <h2>Medical Convoy 2024</h2>
                     <p>Under the supervision of the PharmD program at E-JUST, an impactful medical convoy was held in Al-Ula Village, Borg Al-Arab, for complete assistance in providing free-of-cost medications among villagers. Medical convoys are one of the most important modalities for bringing healthcare to the doorsteps of people in far-flung areas and thus narrowing the gap between providers of healthcare and the populace.</p>
                     
                     <p>This is a great step undertaken by the PharmD at E-JUST to bring in positive changes in health and well-being among villagers. Such initiatives make available the needed medical facilities and showcase community outreach and service in the stream of pharmacy. It is through this direct involvement with the community that the program shows how deeply committed it is to fostering public health and empowering people through accessible healthcare solutions.</p>
+                    
+                    <p><strong>Date:</strong> 10-06-2024</p>
+                    <p><strong>Venue:</strong> The village of Al-Ula (Borg Al-Arab)</p>
+                    
+                    <p><strong>Parties who donated medicines:</strong></p>
+                    <ul>
+                        <li>EVA Pharm.</li>
+                        <li>Amriya for Pharmaceutical Industries S.A.E</li>
+                        <li>MUP Pharm.</li>
+                        <li>PharmD program.</li>
+                    </ul>
+                    
+                    <p><strong>Participant Doctors (specialties):</strong></p>
+                    <ul>
+                        <li>Pediatric</li>
+                        <li>Internal medicine</li>
+                        <li>Obstetrics and gynaecology</li>
+                    </ul>
+                    
+                    <p><strong>The number of villagers who have benefited from medical care:</strong> Between 500-1000</p>
+                </div>
+            </section>
+
+            <!-- Our Sponsors Section -->
+            <section class="sponsors-section">
+                <div class="container">
+                    <h2 class="section-title">Our Sponsors</h2>
+                    <div class="sponsors-logo">
+                        <!-- Sponsor Logo 1 -->
+                        <a href="https://i.ibb.co/G2GYXWq/199094-1669722854.jpg" target="_blank">
+                            <img src="https://i.ibb.co/G2GYXWq/199094-1669722854.jpg" alt="Amriya for Pharmaceutical Industries S.A.E">
+                        </a>
+                        <!-- Sponsor Logo 2 -->
+                        <a href="https://i.ibb.co/wNjxMqB/eva.png" target="_blank">
+                            <img src="https://i.ibb.co/wNjxMqB/eva.png" alt="EVA Pharm.">
+                        </a>
+                        <!-- Sponsor Logo 3 -->
+                        <a href="https://i.ibb.co/xm9zGg2/image.png" target="_blank">
+                            <img src="https://i.ibb.co/xm9zGg2/image.png" alt="MUP Pharm.">
+                        </a>
+                        <!-- Sponsor Logo 4 -->
+                        <a href="https://i.ibb.co/9859Xfj/logo.png" target="_blank">
+                            <img src="https://i.ibb.co/9859Xfj/logo.png" alt="PharmD program">
+                        </a>
+                    </div>
                 </div>
             </section>
 
             <!-- Embedded Gallery for Medical Convoy 2024 -->
-            <h2 class="mb-4 text-center">Medical Convoy 2024</h2>
+            <h2 class="mb-4 text-center">Medical Convoy 2024 Gallery</h2>
             <div class="row gallery">
-                <!-- Image 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="gallery-item">
-                        <a href="images/gallery/science-fair1.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 1">
-                            <img src="images/gallery/science-fair1.jpg" alt="Medical Convoy 2024 Image 1" class="img-fluid rounded" loading="lazy">
-                            <!-- Description Removed -->
-                        </a>
-                    </div>
-                </div>
-                <!-- Image 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="gallery-item">
-                        <a href="images/gallery/science-fair2.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 2">
-                            <img src="images/gallery/science-fair2.jpg" alt="Medical Convoy 2024 Image 2" class="img-fluid rounded" loading="lazy">
-                            <!-- Description Removed -->
-                        </a>
-                    </div>
-                </div>
-                <!-- Image 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="gallery-item">
-                        <a href="images/gallery/science-fair3.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 3">
-                            <img src="images/gallery/science-fair3.jpg" alt="Medical Convoy 2024 Image 3" class="img-fluid rounded" loading="lazy">
-                            <!-- Description Removed -->
-                        </a>
-                    </div>
-                </div>
-                <!-- Image 4 -->
-                <div class="col-md-4 mb-4">
-                    <div class="gallery-item">
-                        <a href="images/gallery/science-fair4.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 4">
-                            <img src="images/gallery/science-fair4.jpg" alt="Medical Convoy 2024 Image 4" class="img-fluid rounded" loading="lazy">
-                            <!-- Description Removed -->
-                        </a>
-                    </div>
-                </div>
-                <!-- Image 5 -->
-                <div class="col-md-4 mb-4">
-                    <div class="gallery-item">
-                        <a href="images/gallery/science-fair5.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 5">
-                            <img src="images/gallery/science-fair5.jpg" alt="Medical Convoy 2024 Image 5" class="img-fluid rounded" loading="lazy">
-                            <!-- Description Removed -->
-                        </a>
-                    </div>
-                </div>
-                <!-- Image 6 -->
-                <div class="col-md-4 mb-4">
-                    <div class="gallery-item">
-                        <a href="images/gallery/science-fair6.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 6">
-                            <img src="images/gallery/science-fair6.jpg" alt="Medical Convoy 2024 Image 6" class="img-fluid rounded" loading="lazy">
-                            <!-- Description Removed -->
-                        </a>
-                    </div>
-                </div>
                 <!-- Image 7 -->
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <a href="images/gallery/science-fair7.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 7">
-                            <img src="images/gallery/science-fair7.jpg" alt="Medical Convoy 2024 Image 7" class="img-fluid rounded" loading="lazy">
-                            <!-- Description Removed -->
+                        <a href="https://i.ibb.co/649z6Hp/science-fair-2024-3-1.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 7">
+                            <img src="https://i.ibb.co/649z6Hp/science-fair-2024-3-1.jpg" alt="Medical Convoy 2024 Image 7" class="img-fluid rounded" loading="lazy">
                         </a>
                     </div>
                 </div>
                 <!-- Image 8 -->
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <a href="images/gallery/science-fair8.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 8">
-                            <img src="images/gallery/science-fair8.jpg" alt="Medical Convoy 2024 Image 8" class="img-fluid rounded" loading="lazy">
-                            <!-- Description Removed -->
+                        <a href="https://i.ibb.co/tzXbQq6/hero1-1.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 8">
+                            <img src="https://i.ibb.co/tzXbQq6/hero1-1.jpg" alt="Medical Convoy 2024 Image 8" class="img-fluid rounded" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+    
+
+                <!-- Image 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="https://i.ibb.co/2WWcCWS/science-fair5-1.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 4">
+                            <img src="https://i.ibb.co/2WWcCWS/science-fair5-1.jpg" alt="Medical Convoy 2024 Image 4" class="img-fluid rounded" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+                <!-- Image 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="https://i.ibb.co/rbX9F37/science-fair7-1.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 5">
+                            <img src="https://i.ibb.co/rbX9F37/science-fair7-1.jpg" alt="Medical Convoy 2024 Image 5" class="img-fluid rounded" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="https://i.ibb.co/QM3GjWN/science-fair-2024-2-1.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 6">
+                            <img src="https://i.ibb.co/QM3GjWN/science-fair-2024-2-1.jpg" alt="Medical Convoy 2024 Image 6" class="img-fluid rounded" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <!-- Image 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="https://i.ibb.co/S73bzWS/science-fair4-1.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 1">
+                            <img src="https://i.ibb.co/S73bzWS/science-fair4-1.jpg" alt="Medical Convoy 2024 Image 1" class="img-fluid rounded" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="https://i.ibb.co/2cVqymq/science-fair3-1.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 3">
+                            <img src="https://i.ibb.co/2cVqymq/science-fair3-1.jpg" alt="Medical Convoy 2024 Image 3" class="img-fluid rounded" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <a href="https://i.ibb.co/yY5gHws/science-fair6-1.jpg" data-lightbox="event-gallery" data-title="Medical Convoy 2024 - Image 2">
+                            <img src="https://i.ibb.co/yY5gHws/science-fair6-1.jpg" alt="Medical Convoy 2024 Image 2" class="img-fluid rounded" loading="lazy">
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
 
 
+    <!-- Footer -->
     <footer class="bg-black text-white py-4">
         <div class="container">
             <div class="row">
@@ -283,9 +366,7 @@
 
 
     <!-- Back to Top Button -->
-    <div class="back-to-top" id="back-to-top">
-        <i class="fas fa-chevron-up"></i>
-    </div>
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -293,7 +374,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <!-- Custom JS for Back to Top button -->
     <script>
-        const backToTopButton = document.getElementById('back-to-top');
+        const backToTopButton = document.querySelector('.back-to-top');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 backToTopButton.classList.add('active');
@@ -308,4 +389,5 @@
     </script>
 </body>
 </html>
+
 
