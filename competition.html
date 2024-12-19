@@ -31,6 +31,31 @@
             transition: transform 1s ease-in-out, box-shadow 1s ease-in-out;
         }
 
+        /* Optional: Add hover effects for images */
+        .event-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Section Title Styling */
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            color: #dc3545;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background-color: #dc3545;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            border-radius: 2px;
+        }
     </style>
 </head>
 
@@ -40,7 +65,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="ESPSA Logo" width="40" height="40" class="d-inline-block align-text-top">
+                <img src="https://i.ibb.co/hfbKPcG/logo-1.png" alt="ESPSA Logo" width="40" height="40" class="d-inline-block align-text-top">
                 ESPSA
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -58,9 +83,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="events.html">Events</a>
                     </li>
-              <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="podcast.html">Podcast</a>
-                </li>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
@@ -73,16 +98,18 @@
     <main class="container my-5 pt-5">
         <h1 class="mb-4 section-title">Competitions</h1>
         <div class="row">
-         <!-- Event Card 1 -->
+            <!-- Event Card 1 -->
             <div class="col-md-4 mb-4">
                 <div class="card">
                     <div class="event-gallery">
-                        <img src="images/soon.jpg" alt="ESPSA (Research Rally Competition)1">
+			<img src="https://i.ibb.co/mcpjWCB/news1-1.jpg" alt="news1-1" border="0">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">ESPSA (Research Rally Competition) 2025</h5>
                         <p class="card-text">An exciting exhibition of innovative scientific projects by students.</p>
                         <p><i class="fas fa-calendar-alt"></i> Date: 2025</p>
+                        <!-- Optional: Add a button or link if details are available -->
+                        <!-- <a href="2025.html" class="btn btn-primary">Details</a> -->
                     </div>
                 </div>
             </div>
@@ -91,7 +118,7 @@
             <div class="col-md-4 mb-4">
                 <div class="card">
                     <div class="event-gallery">
-                        <img src="images/2024.JPG" alt="ESPSA (Research Rally Competition)1">
+			<img src="https://i.ibb.co/Rj3SCgk/2024-1.jpg" alt="2024-1" border="0">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">ESPSA (Research Rally Competition) 2024</h5>
@@ -102,8 +129,29 @@
                 </div>
             </div>
 
+            <!-- Optional: Additional Event Cards Using Other Images -->
+            <!-- Example Event Card 3 -->
+            <!--
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="event-gallery">
+                        <img src="https://i.ibb.co/vkZggg1/1-1.jpg" alt="Event Title 3">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Event Title 3</h5>
+                        <p class="card-text">Description for Event 3.</p>
+                        <p><i class="fas fa-calendar-alt"></i> Date: [Date]</p>
+                        <a href="event3.html" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+            -->
+            <!-- Repeat similar blocks for other images as needed -->
+        </div>
     </main>
-     <footer class="bg-black text-white py-4">
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-4">
         <div class="container">
             <div class="row">
                 <!-- About ESPSA -->
@@ -160,3 +208,4 @@
 </body>
 
 </html>
+
