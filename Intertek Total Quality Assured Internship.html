@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESPSA - Event Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Additional Styles for Event Gallery */
+    .gallery img {
+      transition: transform 0.2s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    /* Ensure all images are equal in size */
+    .gallery-item img {
+      width: 100%;
+      height: 250px; /* Adjust the height as needed */
+      object-fit: cover;
+    }
+    /* Section Titles and Navigation */
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      color: #dc3545;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .section-title::after {
+      content: "";
+      width: 50px;
+      height: 3px;
+      background-color: #dc3545;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      border-radius: 2px;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      display: none;
+      background-color: #dc3545;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      text-align: center;
+      z-index: 1000;
+      transition: opacity 0.3s ease;
+    }
+    .back-to-top.active {
+      display: block;
+      opacity: 0.7;
+    }
+    .back-to-top:hover {
+      opacity: 1;
+      text-decoration: none;
+      color: #fff;
+    }
+    /* Competition Description Section Styles */
+    .competition-description {
+      padding: 40px 0;
+      background-color: #f8f9fa;
+    }
+    .competition-description h2 {
+      margin-bottom: 20px;
+      font-family: 'Oswald', sans-serif;
+      color: #dc3545;
+    }
+    .competition-description p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    .day-description {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    .day-description .text {
+      flex: 1;
+      margin-right: 20px;
+    }
+    .day-description .partner {
+      text-align: center;
+      min-width: 120px;
+    }
+    .day-description .partner img {
+      max-width: 100px;
+      height: auto;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="ESPSA Logo" width="40" height="40" class="d-inline-block align-text-top" />
+        ESPSA
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="competition.html">Competition</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="podcast.html">Podcast</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5 pt-5">
+    <h1 class="mb-4 section-title">Event Gallery</h1>
+
+    <!-- Competition Description Section -->
+    <section class="competition-description">
+      <div class="container">
+        <h2>Intertek Total Quality Assured Internship</h2>
+
+        <!-- Day 1 -->
+        <div class="day-description">
+          <div class="text">
+            <p><strong>Day 1: Analytical Chemistry Fundamentals</strong></p>
+            <p><em>Summary:</em> The first day provided an introduction to the core principles of analytical chemistry. We focused on understanding the basics of qualitative and quantitative analysis, learning how to identify substances and measure their concentrations accurately. The practical session involved an introduction to gravimetric analysis, where we practiced precipitating and weighing analytes to determine their mass and concentration. This foundational day set the stage for more advanced techniques in the following days.</p>
+          </div>
+          <div class="partner">
+            <img src="https://i.ibb.co/MyPgPcXK/intertek.png" alt="Intertek Logo">
+            <p>Corporate Partner</p>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-description">
+          <div class="text">
+            <p><strong>Day 2: Instrumental Analysis</strong></p>
+            <p><em>Summary:</em> On the second day, we delved into instrumental analysis, exploring various advanced techniques used in chemical analysis. We learned about methods such as spectrophotometry, chromatography, and atomic spectroscopy, understanding how these instruments work and their applications in determining the composition and concentration of samples. The practical session involved hands-on experience with some of these instruments, allowing us to see firsthand how they are used in real-world scenarios. This day highlighted the importance of modern technology in analytical chemistry.</p>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-description">
+          <div class="text">
+            <p><strong>Day 3: Microbiology and the Membrane Filter (MF) Technique</strong></p>
+            <p><em>Summary:</em> The third day was dedicated to microbiology and the Membrane Filter (MF) technique. We learned about the critical role of microbiology in ensuring the safety and quality of various products. The practical session involved using different culture media in plates to grow and analyze microorganisms. We practiced the MF technique, understanding how to filter samples, transfer them to media, and interpret the results for contamination levels. This day emphasized the importance of microbiological testing in quality control.</p>
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-description">
+          <div class="text">
+            <p><strong>Day 4: ISO Standards and Quality Assurance</strong></p>
+            <p><em>Summary:</em> On the fourth day, we explored the critical role of ISO standards in quality assurance for analytical and microbiological testing. We focused on ISO/IEC 17025, which ensures laboratory competence and the reliability of testing and calibration results, and ISO 9001, which provides a framework for quality management systems to meet customer and regulatory requirements. We also learned about the global implementation of these standards, which are internationally recognized and involve regular audits to ensure compliance and continuous improvement. This day underscored the importance of ISO standards in maintaining the integrity and credibility of laboratory data worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="mb-4 text-center">ESPSA (Research Rally Competition) 2024</h2>
+    <div class="row gallery">
+      <!-- Reordered Gallery Items -->
+      <!-- New Gallery Item 14 (Moved to Top) -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/5gF0MsdT/Whats-App-Image-2025-02-03-at-16-39-20-9230e083.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 14">
+            <img src="https://i.ibb.co/5gF0MsdT/Whats-App-Image-2025-02-03-at-16-39-20-9230e083.jpg" alt="ESPSA 2024 Image 14" />
+            <div class="description">Image 14</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery Item 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/CKTcRhVc/Whats-App-Image-2025-02-05-at-19-24-06-653d05dc.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 2">
+            <img src="https://i.ibb.co/CKTcRhVc/Whats-App-Image-2025-02-05-at-19-24-06-653d05dc.jpg" alt="ESPSA 2024 Image 2" />
+            <div class="description">Image 2</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- New Gallery Item 15 (Moved to Top) -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/qzkR14m/Whats-App-Image-2025-02-03-at-16-39-20-d476ec6b.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 15">
+            <img src="https://i.ibb.co/qzkR14m/Whats-App-Image-2025-02-03-at-16-39-20-d476ec6b.jpg" alt="ESPSA 2024 Image 15" />
+            <div class="description">Image 15</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- The remaining images follow in their original order -->
+      <!-- Gallery Item 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/p6xDy9bn/Whats-App-Image-2025-02-05-at-19-24-07-53255b9f.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 1">
+            <img src="https://i.ibb.co/p6xDy9bn/Whats-App-Image-2025-02-05-at-19-24-07-53255b9f.jpg" alt="ESPSA 2024 Image 1" />
+            <div class="description">Image 1</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery Item 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/PZF2SfFv/Whats-App-Image-2025-02-03-at-16-39-20-45b932e5.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 3">
+            <img src="https://i.ibb.co/PZF2SfFv/Whats-App-Image-2025-02-03-at-16-39-20-45b932e5.jpg" alt="ESPSA 2024 Image 3" />
+            <div class="description">Image 3</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery Item 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/GQBpJCN5/Whats-App-Image-2025-02-03-at-16-39-21-3d841c89.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 4">
+            <img src="https://i.ibb.co/GQBpJCN5/Whats-App-Image-2025-02-03-at-16-39-21-3d841c89.jpg" alt="ESPSA 2024 Image 4" />
+            <div class="description">Image 4</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery Item 5 -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/Pv0K0Ywf/Whats-App-Image-2025-02-03-at-16-39-21-6468b186.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 5">
+            <img src="https://i.ibb.co/Pv0K0Ywf/Whats-App-Image-2025-02-03-at-16-39-21-6468b186.jpg" alt="ESPSA 2024 Image 5" />
+            <div class="description">Image 5</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery Item 6 -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/LX1VpN1L/Whats-App-Image-2025-02-03-at-16-39-22-5eaf80c7.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 6">
+            <img src="https://i.ibb.co/LX1VpN1L/Whats-App-Image-2025-02-03-at-16-39-22-5eaf80c7.jpg" alt="ESPSA 2024 Image 6" />
+            <div class="description">Image 6</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery Item 7 -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/2310XtN8/Whats-App-Image-2025-02-03-at-16-39-23-e738762a.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 7">
+            <img src="https://i.ibb.co/2310XtN8/Whats-App-Image-2025-02-03-at-16-39-23-e738762a.jpg" alt="ESPSA 2024 Image 7" />
+            <div class="description">Image 7</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery Item 8 -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/sdwHQfJQ/Whats-App-Image-2025-02-03-at-16-39-24-a23b9fdb.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 8">
+            <img src="https://i.ibb.co/sdwHQfJQ/Whats-App-Image-2025-02-03-at-16-39-24-a23b9fdb.jpg" alt="ESPSA 2024 Image 8" />
+            <div class="description">Image 8</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery Item 9 -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/Cs60Y6jG/Whats-App-Image-2025-02-05-at-19-24-08-35e838e9.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 9">
+            <img src="https://i.ibb.co/Cs60Y6jG/Whats-App-Image-2025-02-05-at-19-24-08-35e838e9.jpg" alt="ESPSA 2024 Image 9" />
+            <div class="description">Image 9</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery Item 10 -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/7JX7bdPM/Whats-App-Image-2025-02-03-at-16-39-25-e4281919.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 10">
+            <img src="https://i.ibb.co/7JX7bdPM/Whats-App-Image-2025-02-03-at-16-39-25-e4281919.jpg" alt="ESPSA 2024 Image 10" />
+            <div class="description">Image 10</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery Item 11 -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/V0H4hZHg/Whats-App-Image-2025-02-03-at-16-39-24-137b0f53.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 11">
+            <img src="https://i.ibb.co/V0H4hZHg/Whats-App-Image-2025-02-03-at-16-39-24-137b0f53.jpg" alt="ESPSA 2024 Image 11" />
+            <div class="description">Image 11</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery Item 12 -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/gbPtKvSG/Whats-App-Image-2025-02-03-at-16-39-22-e346bb07.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 12">
+            <img src="https://i.ibb.co/gbPtKvSG/Whats-App-Image-2025-02-03-at-16-39-22-e346bb07.jpg" alt="ESPSA 2024 Image 12" />
+            <div class="description">Image 12</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery Item 13 -->
+      <div class="col-md-4 mb-4">
+        <div class="gallery-item">
+          <a href="https://i.ibb.co/67kfSdf8/Whats-App-Image-2025-02-03-at-16-39-22-0b0f0944.jpg" data-lightbox="event-gallery" data-title="ESPSA 2024 - Image 13">
+            <img src="https://i.ibb.co/67kfSdf8/Whats-App-Image-2025-02-03-at-16-39-22-0b0f0944.jpg" alt="ESPSA 2024 Image 13" />
+            <div class="description">Image 13</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-black text-white py-4">
+    <div class="container">
+      <div class="row">
+        <!-- About ESPSA -->
+        <div class="col-md-4 mb-4">
+          <h5>About ESPSA</h5>
+          <p>
+            ESPSA is a scientific club dedicated to fostering innovation, research, and collaboration among university students.
+          </p>
+        </div>
+        <!-- Social Links -->
+        <div class="col-md-4 mb-4 text-center">
+          <h5>Follow Us</h5>
+          <a href="https://www.facebook.com/profile.php?id=61555934623623" target="_blank" class="text-white me-3 fs-4">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://youtube.com/@espsa-scientific-club?si=561Sei2Qg08z_YQ4" target="_blank" class="text-white fs-4">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+        <!-- Location -->
+        <div class="col-md-4 mb-4">
+          <h5>Our Location</h5>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d867.2689952005741!2d29.560881086063883!3d30.863399426126538!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1728322047867!5m2!1sen!2seg"
+            width="100%"
+            height="200"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        &copy; 2024 ESPSA. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <script>
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+  </script>
+</body>
+</html>
