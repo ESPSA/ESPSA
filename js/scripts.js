@@ -1,22 +1,21 @@
 // scripts.js
 
-// Scroll to Top Button
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-// When the user scrolls down 100px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollTopBtn.style.display = "block";
-    } else {
-        scrollTopBtn.style.display = "none";
+// Scroll to top button functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        backToTop.addEventListener('click', e => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-scrollTopBtn.addEventListener("click", function(){
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // Fullscreen Gallery
