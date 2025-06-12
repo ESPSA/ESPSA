@@ -124,9 +124,9 @@ CREATE TABLE contact_messages (
 
 -- Insert Sample Users
 INSERT INTO users (name, email, password, role) VALUES
-('Remon Yasser', 'remon@example.com', 'hashedpassword1', 'president'),
-('Yasmeen Yasser', 'yasmeen@example.com', 'hashedpassword2', 'secretary'),
-('Ahmed Maged', 'ahmed@example.com', 'hashedpassword3', 'hr_head');
+('Remon Yasser', 'remon@example.com', '0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e', 'president'),
+('Yasmeen Yasser', 'yasmeen@example.com', '6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4', 'secretary'),
+('Ahmed Maged', 'ahmed@example.com', '5906ac361a137e2d286465cd6588ebb5ac3f5ae955001100bc41577c3d751764', 'hr_head');
 
 -- Insert Events
 INSERT INTO events (title, description, event_date, details_page, image_url) VALUES

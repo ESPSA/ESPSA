@@ -46,4 +46,12 @@ function require_login() {
         exit;
     }
 }
+
+function require_role($roles) {
+    $user = current_user();
+    if(!$user || !in_array($user['role'], (array)$roles, true)) {
+        http_response_code(403);
+        exit('Access denied');
+    }
+}
 ?>

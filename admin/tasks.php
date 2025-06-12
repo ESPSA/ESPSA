@@ -1,6 +1,7 @@
 <?php
 $title='Tasks';
 include 'header.php';
+require_role(['president','hr_head']);
 // list tasks
 if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['description'])){
     $desc=trim($_POST['description']);

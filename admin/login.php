@@ -1,14 +1,17 @@
 <?php
 require_once '../dp.php';
-if($_SERVER['REQUEST_METHOD']==='POST'){
+if($_SERVER['REQUEST_METHOD']==='POST' && verify_csrf($_POST['csrf_token'] ?? '')){
     $email=trim($_POST['email']??'');
     $password=trim($_POST['password']??'');
-    $stmt=$mysqli->prepare('SELECT id,password FROM users WHERE email=?');
+    $stmt=$mysqli->prepare('SELECT id,password,role,name FROM users WHERE email=?');
     $stmt->bind_param('s',$email);
     $stmt->execute();
     $user=$stmt->get_result()->fetch_assoc();
-    if($user && $password===$user['password']){
+    $hashed=hash('sha256',$password);
+    if($user && hash_equals($user['password'],$hashed)){
         $_SESSION['user_id']=$user['id'];
+        $_SESSION['user_role']=$user['role'];
+        $_SESSION['user_name']=$user['name'];
         header('Location: dashboard.php');
         exit;
     }
@@ -32,6 +35,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             <h2 class="mb-4 text-center">Admin Login</h2>
             <?php if(!empty($error)): ?><div class="alert alert-danger"><?php echo e($error); ?></div><?php endif; ?>
             <form method="post">
+                <input type="hidden" name="csrf_token" value="<?php echo e(csrf_token()); ?>">
                 <div class="mb-3">
                     <label class="form-label">Email</label>
                     <input type="email" name="email" class="form-control" required>

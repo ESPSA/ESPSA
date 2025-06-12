@@ -1,9 +1,6 @@
 <?php
 require_once '../dp.php';
-if(empty($_SESSION['user_id'])){
-    header('Location: login.php');
-    exit;
-}
+require_login();
 $user = current_user();
 ?>
 <!DOCTYPE html>
@@ -20,6 +17,7 @@ $user = current_user();
 <nav class="navbar navbar-dark bg-black fixed-top">
  <div class="container-fluid">
   <a class="navbar-brand" href="dashboard.php">ESPSA Admin</a>
+  <span class="text-white ms-auto me-3"><?php echo e($user['name']); ?> (<?php echo e($user['role']); ?>)</span>
   <button class="navbar-toggler" type="button" id="menuToggle">
    <span class="navbar-toggler-icon"></span>
   </button>

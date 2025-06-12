@@ -1,6 +1,7 @@
 <?php
 $title='Events';
 include 'header.php';
+require_role(['president','hr_head','secretary']);
 
 // Handle new event submission
 if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['title'])){
