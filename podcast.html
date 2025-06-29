@@ -1,9 +1,193 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="refresh" content="0; url=podcast.php">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESPSA - Podcast</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        /* Removed .video-container to use Bootstrap's ratio class */
+        iframe {
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .description-text {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        .cta-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .cta-button a {
+            background-color: #dc3545;
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button a:hover {
+            background-color: #c82333;
+            color: #fff;
+        }
+        /* Back to Top Button Styling */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: none;
+            background-color: #dc3545;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50%;
+            text-align: center;
+            z-index: 1000;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-to-top.active {
+            display: block;
+            opacity: 0.7;
+        }
+
+        .back-to-top:hover {
+            opacity: 1;
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
 </head>
+
 <body>
-<p>Redirecting to <a href="podcast.php">podcast.php</a>...</p>
+  <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+              <img src="images/logo.png" alt="ESPSA Logo" width="40" height="40" class="d-inline-block align-text-top">
+              ESPSA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="competition.html">Competition</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="events.html">Events</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link active" href="podcast.html">Podcast</a>
+                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+    </nav>
+
+    <!-- Podcast Section -->
+    <main class="container my-5 pt-5">
+        <h1 class="text-center mb-4">Our Latest Podcast</h1>
+        
+        <!-- Descriptive Text Directed to Students -->
+        <p class="description-text">
+            Welcome, students, to the ESPSA Podcast Series! Join our esteemed professors and industry experts as they share invaluable insights, experiences, and knowledge tailored to enhance your academic and professional journey in pharmacy and scientific research. Our podcasts are crafted to inspire, educate, and equip you with the latest trends and innovations in the field, bridging the gap between learning and real-world applications.
+        </p>
+        
+        <!-- Responsive Video Container using Bootstrap's ratio class -->
+        <div class="ratio ratio-16x9 mb-4">
+            <iframe src="https://www.youtube.com/embed/V7lC5z_Lnps?si=2p8sjaZRL61XdS_4" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        
+        <!-- Inactive "Wait for the Episodes" Button -->
+        <div class="text-center">
+            <button type="button" class="btn btn-secondary" disabled>Wait for the Episodes</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-4">
+        <div class="container">
+            <div class="row">
+                <!-- About ESPSA -->
+                <div class="col-md-4 mb-4">
+                    <h5>About ESPSA</h5>
+                    <p>ESPSA is a scientific club dedicated to fostering innovation, research, and collaboration among university students.</p>
+                </div>
+                <!-- Social Media Icons -->
+                <div class="col-md-4 mb-4 text-center">
+                    <h5>Follow Us</h5>
+                    <a href="https://www.facebook.com/profile.php?id=61555934623623" target="_blank" class="text-white me-3 fs-4">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://youtube.com/@espsa-scientific-club?si=561Sei2Qg08z_YQ4" target="_blank" class="text-white fs-4">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                <!-- Google Maps Iframe -->
+                <div class="col-md-4 mb-4">
+                    <h5>Our Location</h5>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d867.2689952005741!2d29.560881086063883!3d30.863399426126538!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1728322047867!5m2!1sen!2seg" 
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" 
+                            referrerpolicy="no-referrer-when-cross-origin">
+                    </iframe>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                &copy; 2024 ESPSA. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS for Back to Top button -->
+    <script>
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+    </script>
 </body>
 </html>
+
