@@ -87,6 +87,9 @@
             box-shadow: var(--shadow-lg);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             overflow: hidden; /* Ensures image respects border-radius */
+            height: 100%; /* Ensure all cards have same height */
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
@@ -120,6 +123,9 @@
 
         .card-body {
             padding: 25px;
+            flex-grow: 1; /* Allow body to grow and push button to bottom */
+            display: flex;
+            flex-direction: column;
         }
 
         .card-title {
@@ -133,38 +139,12 @@
             color: #555;
             font-size: 1rem;
             line-height: 1.5;
+            flex-grow: 1; /* Allow text to take available space */
         }
 
         .card-body p i {
             color: var(--primary-red);
             margin-right: 8px;
-        }
-
-        /* Differentiated Styling for Archived Card */
-        .archived-card {
-            filter: grayscale(80%); /* Desaturate the image */
-            opacity: 0.7; /* Slightly dim the card */
-            border: 1px solid #ddd;
-            box-shadow: none; /* Remove shadow for archived */
-            position: relative;
-        }
-
-        .archived-card:hover {
-            transform: translateY(0); /* No lift on hover for archived */
-            box-shadow: none;
-        }
-
-        .archived-label {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: #6c757d; /* Grey background for archived label */
-            color: white;
-            padding: 5px 12px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            z-index: 5; /* Ensure it's above the image */
         }
 
         /* Button Styling - consistent with new design */
@@ -177,6 +157,7 @@
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            align-self: flex-start; /* Align button to start of flex item */
         }
 
         .btn-primary:hover {
@@ -317,10 +298,10 @@
         </div>
     </nav>
 
-    <!-- Competitions Content -->
+    <!-- Current Competitions Content -->
     <main class="container my-5 pt-5">
         <h1 class="mb-4 section-title">Competitions</h1>
-        <div class="row">
+        <div class="row justify-content-center">
             <!-- Event Card 1: ESPSA (Research Rally Competition) 2025 -->
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100">
@@ -335,11 +316,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </main>
 
-            <!-- Event Card 2: ESPSA (Research Rally Competition) 2024 - ARCHIVED -->
+    <!-- Previously Competitions Section -->
+    <section class="container my-5">
+        <h2 class="mb-4 section-title">Previously Competitions</h2>
+        <div class="row justify-content-center">
+            <!-- Event Card 2: ESPSA (Research Rally Competition) 2024 - PREVIOUSLY -->
             <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 archived-card">
-                    <span class="archived-label">Archived</span>
+                <div class="card h-100">
                     <div class="event-gallery">
                         <img src="https://i.ibb.co/q9yvWNp/relay-1.jpg" alt="ESPSA 2024 Competition" border="0">
                     </div>
@@ -352,26 +338,24 @@
                 </div>
             </div>
 
-            <!-- Optional: Additional Event Cards Using Other Images -->
-            <!-- Example Event Card 3 -->
+            <!-- Optional: Additional Previous Event Cards (Add more here if needed) -->
             <!--
-            <div class="col-md-4 mb-4">
-                <div class="card">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
                     <div class="event-gallery">
-                        <img src="https://i.ibb.co/vkZggg1/1-1.jpg" alt="Event Title 3">
+                        <img src="https://i.ibb.co/vkZggg1/1-1.jpg" alt="Previous Event Example">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Event Title 3</h5>
-                        <p class="card-text">Description for Event 3.</p>
-                        <p><i class="fas fa-calendar-alt"></i> Date: [Date]</p>
-                        <a href="event3.html" class="btn btn-primary">Details</a>
+                        <h5 class="card-title">Previous Event Title</h5>
+                        <p class="card-text">Description for a past event.</p>
+                        <p><i class="fas fa-calendar-alt"></i> Date: [Past Date]</p>
+                        <a href="previous-event.html" class="btn btn-primary">Details</a>
                     </div>
                 </div>
             </div>
             -->
-            <!-- Repeat similar blocks for other images as needed -->
         </div>
-    </main>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-black text-white py-4">
@@ -431,3 +415,4 @@
 </body>
 
 </html>
+
