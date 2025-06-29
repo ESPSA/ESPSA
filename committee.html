@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESPSA - Committee Details</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -61,6 +58,7 @@
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
+            padding-bottom: 40px;
         }
         /* Navbar Styling */
         .navbar {
@@ -99,14 +97,13 @@
 </head>
 <body>
 
-<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">
             <img src="images/logo.png" alt="ESPSA Logo" width="40" height="40" class="d-inline-block align-text-top">
             ESPSA
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -132,7 +129,6 @@
     </div>
 </nav>
 
-<!-- Committee Details -->
 <section class="committee-details">
     <div class="container">
         <div class="committee-header">
@@ -140,13 +136,11 @@
             <p id="committeeWord">Our Mission</p>
         </div>
         <div class="committee-members">
-            <!-- Head Member -->
             <div class="committee-member">
                 <img id="headImage" src="" alt="Head Name">
                 <h4 id="headName">Head Name</h4>
                 <p id="headTitle">Head Title</p>
             </div>
-            <!-- Vice Head Member -->
             <div class="committee-member" id="viceHeadContainer">
                 <img id="viceHeadImage" src="" alt="Vice Head Name">
                 <h4 id="viceHeadName">Vice Head Name</h4>
@@ -160,16 +154,13 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer>
     <div class="container">
         <p>&copy; 2024 ESPSA. All rights reserved.</p>
     </div>
 </footer>
 
-<!-- Bootstrap JS and dependencies -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Custom JS for Dynamic Content -->
 <script>
     // Committee Data
     const committees = {
@@ -181,6 +172,7 @@
                 title: 'Head of HR',
                 image: 'images/team/Ahmed Maged.jpg'
             },
+            viceHead: null, // Explicitly set to null if no vice-head
             about: 'The HR Committee is responsible for managing all aspects related to human resources, including recruitment, training, and employee welfare.'
         },
         oc: {
@@ -202,11 +194,11 @@
             name: 'Scientific Committee',
             word: 'Advancing knowledge through innovation.',
             head: {
-                name: 'Juilana ',
+                name: 'Juilana', // Corrected spelling (was Juilana )
                 title: 'Head of Scientific',
                 image: 'https://i.ibb.co/jZsKD6Pc/juliana.jpg'
             },
-           
+            viceHead: null,
             about: 'The Scientific Committee focuses on the development and implementation of scientific projects and research within ESPSA.'
         },
         media: {
@@ -220,7 +212,6 @@
             viceHead: null,
             about: 'The Media Committee manages all media-related activities, including photography, videography, and social media presence.'
         },
-
         design: {
             name: 'Design Committee',
             word: 'Crafting visual identities that resonate.',
@@ -232,8 +223,8 @@
             viceHead: {
                 name: 'Mohamed Ali',
                 title: 'Vice Design',
-                image: 'https://i.ibb.co/kVbMFjCR/Andrew.jpg'
-            }
+                image: 'https://i.ibb.co/kVbMFjCR/Andrew.jpg' // Using Andrew's image as per original code
+            },
             about: 'The Design Committee is responsible for all design-related projects, including branding, graphics, and visual content creation.'
         },
         pr: {
@@ -248,52 +239,51 @@
                 name: 'Andrew Ayman',
                 title: 'Vice PR',
                 image: 'https://i.ibb.co/kVbMFjCR/Andrew.jpg'
-            }
+            },
+            about: 'The PR Committee builds and maintains positive relationships with the public and media, enhancing the organization\'s image.'
+        }
     };
 
-    // Function to get query parameters
+    // Function to get query parameters from the URL
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(param);
     }
 
-    // Function to populate committee details
+    // Function to populate committee details based on URL parameter
     function populateCommitteeDetails() {
         const committeeKey = getQueryParam('committee');
         const committee = committees[committeeKey];
 
         if (committee) {
-            // Set Committee Name and Word
+            // Update committee header
             document.getElementById('committeeName').innerText = committee.name;
             document.getElementById('committeeWord').innerText = committee.word;
 
-            // Set Head Details
-            const headImage = document.getElementById('headImage');
-            headImage.src = committee.head.image;
-            headImage.alt = committee.head.name;
+            // Update head member details
+            document.getElementById('headImage').src = committee.head.image;
+            document.getElementById('headImage').alt = committee.head.name;
             document.getElementById('headName').innerText = committee.head.name;
             document.getElementById('headTitle').innerText = committee.head.title;
 
-            // Set Vice Head Details if available
+            // Update vice head member details if available, otherwise hide the container
+            const viceHeadContainer = document.getElementById('viceHeadContainer');
             if (committee.viceHead) {
-                const viceHeadContainer = document.getElementById('viceHeadContainer');
-                const viceHeadImage = document.getElementById('viceHeadImage');
-                viceHeadImage.src = committee.viceHead.image;
-                viceHeadImage.alt = committee.viceHead.name;
+                document.getElementById('viceHeadImage').src = committee.viceHead.image;
+                document.getElementById('viceHeadImage').alt = committee.viceHead.name;
                 document.getElementById('viceHeadName').innerText = committee.viceHead.name;
                 document.getElementById('viceHeadTitle').innerText = committee.viceHead.title;
-                viceHeadContainer.style.display = 'block';
+                viceHeadContainer.style.display = 'block'; // Make sure it's visible
             } else {
-                // Hide Vice Head section if not available
-                document.getElementById('viceHeadContainer').style.display = 'none';
+                viceHeadContainer.style.display = 'none'; // Hide if no vice head
             }
 
-            // Set About Section
+            // Update about the committee section
             document.getElementById('committeeAbout').innerText = committee.about;
         } else {
-            // If committee not found, display an error message
+            // Display an error message if committee is not found
             document.querySelector('.committee-details').innerHTML = `
-                <div class="container text-center">
+                <div class="container text-center py-5">
                     <h2 class="mt-5">Committee Not Found</h2>
                     <p>The committee you are looking for does not exist. Please check the URL or go back to the <a href="index.html">Home Page</a>.</p>
                 </div>
@@ -301,7 +291,7 @@
         }
     }
 
-    // Populate the committee details on page load
+    // Call the function to populate details when the page loads
     window.onload = populateCommitteeDetails;
 </script>
 </body>
