@@ -1,298 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESPSA - Committee Details</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
-            padding-top: 80px; /* To account for fixed navbar */
-        }
-        .committee-header {
-            text-align: center;
-            padding: 50px 0 30px 0;
-        }
-        .committee-header h1 {
-            font-family: 'Oswald', sans-serif;
-            color: #333333;
-            margin-bottom: 10px;
-        }
-        .committee-header p {
-            font-size: 1.1rem;
-            color: #555555;
-        }
-        .committee-members {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-        .committee-member {
-            text-align: center;
-            max-width: 250px;
-        }
-        .committee-member img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 3px solid #ddd;
-        }
-        .committee-member h4 {
-            font-family: 'Oswald', sans-serif;
-            color: #333333;
-            margin-bottom: 5px;
-        }
-        .committee-member p {
-            color: #555555;
-        }
-        .committee-description {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            padding-bottom: 40px;
-        }
-        /* Navbar Styling */
-        .navbar {
-            background-color: #000000;
-        }
-        .navbar-brand img {
-            margin-right: 10px;
-        }
-        .nav-link {
-            color: #ffffff !important;
-        }
-        .nav-link.active {
-            font-weight: bold;
-        }
-        /* Footer */
-        footer {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .committee-members {
-                flex-direction: column;
-                gap: 20px;
-            }
-        }
-        @media (max-width: 576px) {
-            .committee-member img {
-                width: 120px;
-                height: 120px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESPSA - Committee Details</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --primary-red: #dc3545;
+      --dark-red: #b91c1c;
+      --light-red: #fef2f2;
+      --gradient-primary: linear-gradient(135deg, #dc3545 0%, #991b1b 100%);
+      --bg-light: #f8f9fa;
+      --text-main: #333333;
+      --text-muted: #555555;
+      --shadow-card: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      background-color: var(--bg-light);
+      padding-top: 80px; /* for fixed navbar */
+      color: var(--text-main);
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #000000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-brand img {
+      margin-right: 10px;
+    }
+
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+    }
+
+    .nav-link.active {
+      color: var(--primary-red) !important;
+      font-weight: 600;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-red) !important;
+    }
+
+    /* Header */
+    .committee-header {
+      text-align: center;
+      padding: 60px 0 30px 0;
+    }
+
+    .committee-header h1 {
+      font-family: "Oswald", sans-serif;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      font-size: 2.6rem;
+    }
+
+    .committee-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Members */
+    .committee-members {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .committee-member {
+      text-align: center;
+      max-width: 260px;
+      background-color: #ffffff;
+      padding: 25px 20px;
+      border-radius: 15px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .committee-member:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .committee-member img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 4px solid var(--primary-red);
+    }
+
+    .committee-member h4 {
+      font-family: "Oswald", sans-serif;
+      color: var(--text-main);
+      margin-bottom: 5px;
+      font-size: 1.3rem;
+    }
+
+    .committee-member p {
+      color: var(--text-muted);
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    /* About */
+    .committee-description {
+      max-width: 850px;
+      margin: 0 auto 50px auto;
+      text-align: center;
+      background-color: #ffffff;
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .committee-description h3 {
+      font-family: "Oswald", sans-serif;
+      margin-bottom: 15px;
+      color: var(--primary-red);
+    }
+
+    .committee-description p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .committee-members {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .committee-member img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .committee-header h1 {
+        font-size: 2.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="ESPSA Logo" width="40" height="40" class="d-inline-block align-text-top">
-            ESPSA
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="competition.html">Competition</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="events.html">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="index.html">
+        <img
+          src="https://i.ibb.co/hfbKPcG/logo-1.png"
+          alt="ESPSA Logo"
+          width="40"
+          height="40"
+          class="d-inline-block align-text-top"
+        />
+        ESPSA
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="competition.html">Competition</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>
 
-<section class="committee-details">
+  <!-- Committee Details -->
+  <section class="committee-details">
     <div class="container">
-        <div class="committee-header">
-            <h1 id="committeeName">Committee Name</h1>
-            <p id="committeeWord">Our Mission</p>
-        </div>
-        <div class="committee-members">
-            <div class="committee-member">
-                <img id="headImage" src="" alt="Head Name">
-                <h4 id="headName">Head Name</h4>
-                <p id="headTitle">Head Title</p>
-            </div>
-            <div class="committee-member" id="viceHeadContainer">
-                <img id="viceHeadImage" src="" alt="Vice Head Name">
-                <h4 id="viceHeadName">Vice Head Name</h4>
-                <p id="viceHeadTitle">Vice Head Title</p>
-            </div>
-        </div>
-        <div class="committee-description">
-            <h3>About the Committee</h3>
-            <p id="committeeAbout">About the committee...</p>
-        </div>
-    </div>
-</section>
+      <div class="committee-header">
+        <h1 id="committeeName">Committee Name</h1>
+        <p id="committeeWord">Our Mission</p>
+      </div>
 
-<footer>
+      <div class="committee-members">
+        <!-- Head -->
+        <div class="committee-member">
+          <img id="headImage" src="" alt="Head Name" />
+          <h4 id="headName">Head Name</h4>
+          <p id="headTitle">Head Title</p>
+        </div>
+
+        <!-- Vice Head (hidden if not available) -->
+        <div class="committee-member" id="viceHeadContainer">
+          <img id="viceHeadImage" src="" alt="Vice Head Name" />
+          <h4 id="viceHeadName">Vice Head Name</h4>
+          <p id="viceHeadTitle">Vice Head Title</p>
+        </div>
+      </div>
+
+      <div class="committee-description">
+        <h3>About the Committee</h3>
+        <p id="committeeAbout">About the committee...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
     <div class="container">
-        <p>&copy; 2024 ESPSA. All rights reserved.</p>
+      <p>&copy; 2025 ESPSA. All rights reserved.</p>
     </div>
-</footer>
+  </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    // Committee Data
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Updated Committee Data (synced with board page)
     const committees = {
-        hr: {
-            name: 'HR Committee',
-            word: 'Empowering our team with the best HR practices.',
-            head: {
-                name: 'Ahmed Maged',
-                title: 'Head of HR',
-                image: 'images/team/Ahmed Maged.jpg'
-            },
-            viceHead: null, // Explicitly set to null if no vice-head
-            about: 'The HR Committee is responsible for managing all aspects related to human resources, including recruitment, training, and employee welfare.'
+      hr: {
+        name: "HR Committee",
+        word: "Empowering our team with the best HR practices.",
+        head: {
+          name: "Ahmed Maged",
+          title: "Head of HR",
+          image: "https://i.ibb.co/wcdtMfY/Ahmed-Maged-1.jpg",
         },
-        oc: {
-            name: 'OC Committee',
-            word: 'Organizing excellence in every event.',
-            head: {
-                name: 'Mahmoud Meselhy',
-                title: 'Head of OC',
-                image: 'images/team/Mahmoud.jpg'
-            },
-            viceHead: {
-                name: 'Antonious Amgad',
-                title: 'Vice OC',
-                image: 'images/team/Antonious Amgad.jpg'
-            },
-            about: 'The OC Committee oversees the organization and execution of all ESPSA events, ensuring they run smoothly and successfully.'
+        viceHead: {
+          name: "Kero Mahrous",
+          title: "Vice HR",
+          image: "https://i.ibb.co/7JDnYyXw/Screenshot-2025-11-23-174159.png",
         },
-        scientific: {
-            name: 'Scientific Committee',
-            word: 'Advancing knowledge through innovation.',
-            head: {
-                name: 'Juilana', // Corrected spelling (was Juilana )
-                title: 'Head of Scientific',
-                image: 'https://i.ibb.co/jZsKD6Pc/juliana.jpg'
-            },
-            viceHead: null,
-            about: 'The Scientific Committee focuses on the development and implementation of scientific projects and research within ESPSA.'
+        about:
+          "The HR Committee is responsible for recruitment, onboarding, training, and member welfare. They ensure that ESPSA remains a supportive, organized, and growth-oriented environment for all members.",
+      },
+      oc: {
+        name: "OC Committee",
+        word: "Organizing excellence in every event.",
+        head: {
+          name: "Mohamed Mohsen",
+          title: "Head of OC",
+          image: "https://via.placeholder.com/150?text=Profile",
         },
-        media: {
-            name: 'Media Committee',
-            word: 'Capturing moments, telling stories.',
-            head: {
-                name: 'Hanna Mohamed Abd El Nasser',
-                title: 'Head of Media',
-                image: 'https://i.ibb.co/PZtnmRNh/Whats-App-Image-2025-07-21-at-19-35-05-96d96c74.jpg'
-            },
-            viceHead: null,
-            about: 'The Media Committee manages all media-related activities, including photography, videography, and social media presence.'
+        viceHead: {
+          name: "Esraa Naser",
+          title: "Vice OC",
+          image: "https://i.ibb.co/Zzcd8pKK/Esraa-Naser-Vice-oc.png",
         },
-        design: {
-            name: 'Design Committee',
-            word: 'Crafting visual identities that resonate.',
-            head: {
-                name: 'Yousef Ehab',
-                title: 'Head of Design',
-                image: 'images/team/Yousef Ehab.jpg'
-            },
-            viceHead: {
-                name: 'Mohamed Ali',
-                title: 'Vice Design',
-                image: 'https://i.ibb.co/bxfCNKf/1000019072.jpg' // Using Andrew's image as per original code
-            },
-
-
-            about: 'The Design Committee is responsible for all design-related projects, including branding, graphics, and visual content creation.'
+        about:
+          "The OC (Organizing Committee) is in charge of planning, logistics, and on-ground execution for ESPSA events and activities, making sure everything runs smoothly and professionally.",
+      },
+      scientific: {
+        name: "Scientific Committee",
+        word: "Advancing knowledge through innovation.",
+        head: {
+          name: "Juliana",
+          title: "Head of Scientific",
+          image: "https://i.ibb.co/jZsKD6Pc/juliana.jpg",
         },
-        pr: {
-            name: 'PR Committee',
-            word: 'Promoting our vision to the world.',
-            head: {
-                name: 'Menna Maher',
-                title: 'Head of PR',
-                image: 'https://i.ibb.co/fzPMc2sQ/image.png'
-            },
-            viceHead: {
-                name: 'Andrew Ayman',
-                title: 'Vice PR',
-                image: 'https://i.ibb.co/kVbMFjCR/Andrew.jpg'
-            },
-            about: 'The PR Committee builds and maintains positive relationships with the public and media, enhancing the organization\'s image.'
-        }
+        viceHead: null,
+        about:
+          "The Scientific Committee develops and supervises scientific content, research activities, and academic sessions, helping students strengthen their scientific thinking and research skills.",
+      },
+      media: {
+        name: "Media Committee",
+        word: "Capturing moments, telling stories.",
+        head: {
+          name: "Hanna Mohamed Abd El Nasser",
+          title: "Head of Media",
+          image:
+            "https://i.ibb.co/PZtnmRNh/Whats-App-Image-2025-07-21-at-19-35-05-96d96c74.jpg",
+        },
+        viceHead: {
+          name: "Alaa Ebrahim",
+          title: "Vice Media",
+          image: "https://i.ibb.co/W4nnGJ2c/Alaa-Ebrahim-Vice-media.png",
+        },
+        about:
+          "The Media Committee handles photography, videography, and content coverage of ESPSA events. They document memories and keep our community visually connected and engaged.",
+      },
+      design: {
+        name: "Design Committee",
+        word: "Crafting visual identities that resonate.",
+        head: {
+          name: "Yousef Ehab",
+          title: "Head of Design",
+          image: "https://i.ibb.co/z8Ytq8K/Yousef-Ehab-1.jpg",
+        },
+        viceHead: {
+          name: "Mohamed Ali",
+          title: "Vice Design",
+          image: "https://i.ibb.co/bxfCNKf/1000019072.jpg",
+        },
+        about:
+          "The Design Committee is responsible for ESPSA’s visual identity: posters, branding, social media designs, and all creative visuals that represent the club.",
+      },
+      pr: {
+        name: "PR Committee",
+        word: "Promoting our vision to the world.",
+        head: {
+          name: "Malak Ayman",
+          title: "Head PR",
+          image: "https://i.ibb.co/9HDp0zzz/Malak-Ayman-Head-PR.png",
+        },
+        viceHead: {
+          name: "Andrew Ayman",
+          title: "Vice PR",
+          image: "https://i.ibb.co/kVbMFjCR/Andrew.jpg",
+        },
+        about:
+          "The PR Committee manages ESPSA’s communication with students, partners, and external entities. They work on collaborations, outreach, and maintaining a strong, positive public image.",
+      },
     };
 
-    // Function to get query parameters from the URL
+    // Get query parameter from URL
     function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
     }
 
-    // Function to populate committee details based on URL parameter
+    // Populate committee details on page
     function populateCommitteeDetails() {
-        const committeeKey = getQueryParam('committee');
-        const committee = committees[committeeKey];
+      const committeeKey = getQueryParam("committee");
+      const committee = committees[committeeKey];
 
-        if (committee) {
-            // Update committee header
-            document.getElementById('committeeName').innerText = committee.name;
-            document.getElementById('committeeWord').innerText = committee.word;
+      if (committee) {
+        // Header
+        document.getElementById("committeeName").innerText = committee.name;
+        document.getElementById("committeeWord").innerText = committee.word;
 
-            // Update head member details
-            document.getElementById('headImage').src = committee.head.image;
-            document.getElementById('headImage').alt = committee.head.name;
-            document.getElementById('headName').innerText = committee.head.name;
-            document.getElementById('headTitle').innerText = committee.head.title;
+        // Head
+        document.getElementById("headImage").src = committee.head.image;
+        document.getElementById("headImage").alt = committee.head.name;
+        document.getElementById("headName").innerText = committee.head.name;
+        document.getElementById("headTitle").innerText = committee.head.title;
 
-            // Update vice head member details if available, otherwise hide the container
-            const viceHeadContainer = document.getElementById('viceHeadContainer');
-            if (committee.viceHead) {
-                document.getElementById('viceHeadImage').src = committee.viceHead.image;
-                document.getElementById('viceHeadImage').alt = committee.viceHead.name;
-                document.getElementById('viceHeadName').innerText = committee.viceHead.name;
-                document.getElementById('viceHeadTitle').innerText = committee.viceHead.title;
-                viceHeadContainer.style.display = 'block'; // Make sure it's visible
-            } else {
-                viceHeadContainer.style.display = 'none'; // Hide if no vice head
-            }
-
-            // Update about the committee section
-            document.getElementById('committeeAbout').innerText = committee.about;
+        // Vice Head
+        const viceHeadContainer = document.getElementById("viceHeadContainer");
+        if (committee.viceHead) {
+          document.getElementById("viceHeadImage").src =
+            committee.viceHead.image;
+          document.getElementById("viceHeadImage").alt =
+            committee.viceHead.name;
+          document.getElementById("viceHeadName").innerText =
+            committee.viceHead.name;
+          document.getElementById("viceHeadTitle").innerText =
+            committee.viceHead.title;
+          viceHeadContainer.style.display = "block";
         } else {
-            // Display an error message if committee is not found
-            document.querySelector('.committee-details').innerHTML = `
-                <div class="container text-center py-5">
-                    <h2 class="mt-5">Committee Not Found</h2>
-                    <p>The committee you are looking for does not exist. Please check the URL or go back to the <a href="index.html">Home Page</a>.</p>
-                </div>
-            `;
+          viceHeadContainer.style.display = "none";
         }
+
+        // About
+        document.getElementById("committeeAbout").innerText = committee.about;
+      } else {
+        // Not found
+        document.querySelector(".committee-details").innerHTML = `
+          <div class="container text-center py-5">
+            <h2 class="mt-5">Committee Not Found</h2>
+            <p>The committee you are looking for does not exist. Please check the URL or go back to the <a href="index.html">Home Page</a>.</p>
+          </div>
+        `;
+      }
     }
 
-    // Call the function to populate details when the page loads
     window.onload = populateCommitteeDetails;
-</script>
+  </script>
 </body>
 </html>
-
