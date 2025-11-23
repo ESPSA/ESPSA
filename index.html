@@ -1,240 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESPSA - Home</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Modern Variables (Consistent across site) */
-        :root {
-            --primary-red: #dc3545;
-            --dark-red: #b91c1c;
-            --light-red: #fef2f2;
-            --gradient-primary: linear-gradient(135deg, #dc3545 0%, #991b1b 100%);
-            --gradient-secondary: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --text-color: #333;
-            --secondary-text-color: #64748b;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESPSA - Home</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Modern Variables (Consistent across site) */
+    :root {
+      --primary-red: #dc3545;
+      --dark-red: #b91c1c;
+      --light-red: #fef2f2;
+      --gradient-primary: linear-gradient(135deg, #dc3545 0%, #991b1b 100%);
+      --gradient-secondary: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --text-color: #333;
+      --secondary-text-color: #64748b;
+    }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-            color: var(--text-color);
-        }
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      color: var(--text-color);
+    }
 
-        /* Navbar Styling */
-        .navbar {
-            background-color: #000 !important;
-            transition: all 0.3s ease-in-out;
-            box-shadow: var(--shadow-sm);
-        }
+    /* Navbar Styling */
+    .navbar {
+      background-color: #000 !important;
+      transition: all 0.3s ease-in-out;
+      box-shadow: var(--shadow-sm);
+    }
 
-        .navbar-brand {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: #fff !important;
-        }
+    .navbar-brand {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #fff !important;
+    }
 
-        .navbar-nav .nav-link {
-            color: rgba(255, 255, 255, 0.7) !important;
-            transition: color 0.3s ease;
-            font-weight: 500;
-            padding: 0.8rem 1.2rem;
-            border-radius: 8px;
-        }
+    .navbar-nav .nav-link {
+      color: rgba(255, 255, 255, 0.7) !important;
+      transition: color 0.3s ease;
+      font-weight: 500;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+    }
 
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--primary-red) !important;
-            background-color: rgba(255, 255, 255, 0.05);
-        }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--primary-red) !important;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
 
-        /* Hero Section - Dynamic Background & Animations */
-        .hero-section {
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%),
-                        url('https://i.ibb.co/d0zfDrqK/IMG-2064.jpg') center/cover no-repeat fixed; /* Added fixed for parallax-like effect */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
+    /* Hero Section - Dynamic Background & Animations */
+    .hero-section {
+      height: 100vh;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%),
+                  url('https://i.ibb.co/d0zfDrqK/IMG-2064.jpg') center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%);
-            animation: shimmer 10s infinite linear; /* Slower shimmer for subtlety */
-        }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%);
+      animation: shimmer 10s infinite linear;
+    }
 
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
 
-        .hero-section .container {
-            position: relative;
-            z-index: 2; /* Ensure content is above shimmer */
-        }
+    .hero-section .container {
+      position: relative;
+      z-index: 2;
+    }
 
-        .hero-section h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 4.5rem; /* Larger for impact */
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
-            animation: fadeInDown 1s ease-out;
-        }
+    .hero-section h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+      animation: fadeInDown 1s ease-out;
+    }
 
-        .hero-section p {
-            font-size: 1.8rem; /* Larger */
-            margin-top: 10px;
-            color: rgba(255,255,255,0.9);
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
+    .hero-section p {
+      font-size: 1.8rem;
+      margin-top: 10px;
+      color: rgba(255,255,255,0.9);
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
 
-        .hero-section .btn-primary {
-            margin-top: 30px;
-            font-size: 1.3rem; /* Larger button */
-            padding: 15px 40px;
-            border-radius: 50px; /* Pill shape */
-            background: var(--gradient-primary);
-            border: none;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
-            animation: zoomIn 1s ease-out 0.6s both;
-        }
+    .hero-section .btn-primary {
+      margin-top: 30px;
+      font-size: 1.3rem;
+      padding: 15px 40px;
+      border-radius: 50px;
+      background: var(--gradient-primary);
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-lg);
+      animation: zoomIn 1s ease-out 0.6s both;
+    }
 
-        .hero-section .btn-primary:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: var(--shadow-xl);
-            background: var(--dark-red);
-        }
+    .hero-section .btn-primary:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: var(--shadow-xl);
+      background: var(--dark-red);
+    }
 
-        /* Keyframe Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    /* Keyframe Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
 
-        /* Section Titles - Consistent Style */
-        .section-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            color: var(--primary-red);
-            position: relative;
-            margin-bottom: 3rem;
-            text-align: center;
-            padding-top: 20px; /* Add some spacing from top */
-        }
+    /* Section Titles - Consistent Style */
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--primary-red);
+      position: relative;
+      margin-bottom: 3rem;
+      text-align: center;
+      padding-top: 20px;
+    }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90px; /* Slightly wider */
-            height: 5px; /* Thicker */
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 5px;
+      background: var(--gradient-primary);
+      border-radius: 2px;
+    }
 
-        /* Features Section - Modernized Boxes */
-        .features-section {
-            background-color: var(--gradient-secondary); /* Use gradient background */
-            padding: 80px 0; /* More padding */
-            overflow: hidden; /* To contain potential animations */
-        }
+    /* Features Section */
+    .features-section {
+      background-color: var(--gradient-secondary);
+      padding: 80px 0;
+      overflow: hidden;
+    }
 
-        .feature-box {
-            background: white;
-            padding: 40px 20px; /* More padding */
-            text-align: center;
-            border-radius: 15px; /* More rounded corners */
-            box-shadow: var(--shadow-lg);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            height: 100%; /* Ensure boxes are same height */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+    .feature-box {
+      background: white;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-        .feature-box:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: var(--shadow-xl);
-        }
+    .feature-box:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: var(--shadow-xl);
+    }
 
-        .feature-box i {
-            font-size: 3.5rem; /* Larger icons */
-            color: var(--primary-red);
-            margin-bottom: 25px;
-            transition: transform 0.3s ease;
-        }
+    .feature-box i {
+      font-size: 3.5rem;
+      color: var(--primary-red);
+      margin-bottom: 25px;
+      transition: transform 0.3s ease;
+    }
 
-        .feature-box:hover i {
-            transform: rotateY(180deg); /* Flip icon on hover */
-        }
+    .feature-box:hover i {
+      transform: rotateY(180deg);
+    }
 
-        .feature-box h5 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.8rem; /* Larger title */
-            margin-bottom: 15px;
-            color: var(--text-color);
-        }
+    .feature-box h5 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: var(--text-color);
+    }
 
-        .feature-box p {
-            font-size: 1.05rem; /* Slightly larger text */
-            color: var(--secondary-text-color);
-        }
+    .feature-box p {
+      font-size: 1.05rem;
+      color: var(--secondary-text-color);
+    }
 
-        /* About, Aim, Vision Sections */
-        .main-content-section {
-            padding: 60px 0;
-        }
-        .main-content-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #475569;
-            margin-bottom: 1.5rem;
-        }
+    /* About, Aim, Vision Sections */
+    .main-content-section {
+      padding: 60px 0;
+    }
 
-        /* Team Section */
-        .team-section {
-            padding: 60px 0;
-            background-color: #f8f9fa;
-        }
-      
+    .main-content-section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #475569;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Team Section */
+    .team-section {
+      padding: 60px 0;
+      background-color: #f8f9fa;
+    }
+
     .team-member-card {
       background: white;
       padding: 20px;
@@ -261,503 +262,528 @@
       color: var(--primary-red);
       margin-top: 15px;
     }
-        .btn-meet-team {
-            background: var(--gradient-primary);
-            border: none;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
-            color: white;
-        }
-        .btn-meet-team:hover {
-            background: var(--dark-red);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
-        }
 
-        /* News & Updates Section - Modernized Cards */
-        .news-section {
-            background-color: #343a40; /* Dark background as requested */
-            color: #fff;
-            padding: 80px 0;
-        }
-        .news-section .section-title {
-            color: #fff; /* White title for dark background */
-        }
-        .news-section .section-title::after {
-            background: linear-gradient(135deg, #fff 0%, #ddd 100%); /* Lighter underline */
-        }
+    .btn-meet-team {
+      background: var(--gradient-primary);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-lg);
+      color: white;
+    }
 
-        .news-card {
-            background-color: #495057; /* Darker card background */
-            border: none;
-            height: 100%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            color: white;
-            display: flex;
-            flex-direction: column; /* Ensure content stacks vertically */
-        }
-        .news-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
+    .btn-meet-team:hover {
+      background: var(--dark-red);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl);
+    }
 
-        .news-card-img-top {
-            width: 100%;
-            height: 220px; /* Fixed height for image consistency */
-            object-fit: cover;
-            border-bottom: 4px solid var(--primary-red); /* Accent border */
-        }
+    /* News & Updates Section */
+    .news-section {
+      background-color: #343a40;
+      color: #fff;
+      padding: 80px 0;
+    }
 
-        .news-card-body {
-            padding: 25px;
-            flex-grow: 1; /* Allow body to grow and push button to bottom */
-            display: flex;
-            flex-direction: column;
-        }
-        .news-card-title {
-            font-size: 1.6rem;
-            font-family: 'Oswald', sans-serif;
-            color: var(--primary-red); /* Red title */
-            margin-bottom: 10px;
-        }
-        .news-card p {
-            font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1.5rem;
-            flex-grow: 1; /* Allow paragraph to take available space */
-        }
-        .news-card .btn-light {
-            background-color: #fff;
-            color: var(--primary-red);
-            border: none;
-            border-radius: 50px; /* Pill shape */
-            padding: 8px 20px;
-            font-weight: 600;
-            align-self: flex-start; /* Align button to start of flex item */
-            transition: all 0.3s ease;
-        }
-        .news-card .btn-light:hover {
-            background-color: var(--light-red);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-sm);
-        }
+    .news-section .section-title {
+      color: #fff;
+    }
 
+    .news-section .section-title::after {
+      background: linear-gradient(135deg, #fff 0%, #ddd 100%);
+    }
 
-        /* Footer - Consistent Style */
-        footer {
-            background-color: #000;
-            color: #fff;
-            padding: 40px 0;
-            border-top: 5px solid var(--dark-red);
-        }
+    .news-card {
+      background-color: #495057;
+      border: none;
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
 
-        footer h5 {
-            font-family: 'Oswald', sans-serif;
-            color: var(--primary-red);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
+    .news-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-xl);
+    }
 
-        footer p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-        }
+    .news-card-img-top {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 4px solid var(--primary-red);
+    }
 
-        footer .fab {
-            color: rgba(255, 255, 255, 0.8);
-            transition: color 0.3s ease;
-        }
+    .news-card-body {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
 
-        footer .fab:hover {
-            color: var(--primary-red);
-        }
+    .news-card-title {
+      font-size: 1.6rem;
+      font-family: 'Oswald', sans-serif;
+      color: var(--primary-red);
+      margin-bottom: 10px;
+    }
 
-        footer iframe {
-            border-radius: 8px;
-            box-shadow: var(--shadow-lg);
-        }
+    .news-card p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
 
-        /* Back to Top Arrow - Consistent Style */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--gradient-primary);
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 1000;
-            font-size: 1.3rem;
-        }
+    .news-card .btn-light {
+      background-color: #fff;
+      color: var(--primary-red);
+      border: none;
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-weight: 600;
+      align-self: flex-start;
+      transition: all 0.3s ease;
+    }
 
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
+    .news-card .btn-light:hover {
+      background-color: var(--light-red);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
 
-        .back-to-top:hover {
-            transform: translateY(-7px) scale(1.1);
-            background: var(--dark-red);
-            box-shadow: var(--shadow-xl);
-            color: white;
-        }
+    /* Footer */
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 40px 0;
+      border-top: 5px solid var(--dark-red);
+    }
 
-        /* Responsive Design */
-        @media (max-width: 991.98px) {
-            .hero-section h1 {
-                font-size: 3.5rem;
-            }
-            .hero-section p {
-                font-size: 1.5rem;
-            }
-            .section-title {
-                font-size: 2.2rem;
-                margin-bottom: 2.5rem;
-            }
-            .feature-box {
-                margin-bottom: 2rem;
-            }
-            .team-member-card {
-                margin-bottom: 1.5rem;
-            }
-            .news-card {
-                margin-bottom: 2rem;
-            }
-        }
+    footer h5 {
+      font-family: 'Oswald', sans-serif;
+      color: var(--primary-red);
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
 
-        @media (max-width: 767.98px) {
-            .hero-section {
-                height: 80vh; /* Adjust height for smaller screens */
-            }
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-            .hero-section p {
-                font-size: 1.2rem;
-            }
-            .hero-section .btn-primary {
-                font-size: 1rem;
-                padding: 10px 25px;
-            }
-            .section-title {
-                font-size: 1.8rem;
-                margin-bottom: 2rem;
-            }
-            .section-title::after {
-                width: 70px;
-                height: 4px;
-            }
-            .features-section, .main-content-section, .team-section, .news-section, footer {
-                padding: 40px 0;
-            }
-            .feature-box {
-                padding: 25px 15px;
-            }
-            .feature-box i {
-                font-size: 3rem;
-            }
-            .feature-box h5 {
-                font-size: 1.3rem;
-            }
-            .feature-box p {
-                font-size: 0.9rem;
-            }
-            .main-content-section p {
-                font-size: 1rem;
-            }
-            .team-member-card img {
-                width: 120px;
-                height: 120px;
-            }
-            .news-card-img-top {
-                height: 180px;
-            }
-            .news-card-title {
-                font-size: 1.4rem;
-            }
-            .news-card p {
-                font-size: 0.95rem;
-            }
-            .news-card .btn-light {
-                padding: 6px 15px;
-                font-size: 0.9rem;
-            }
-            .back-to-top {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
-                bottom: 1.5rem;
-                right: 1.5rem;
-            }
-            footer h5 {
-                font-size: 1.2rem;
-            }
-            footer p {
-                font-size: 0.85rem;
-            }
-        }
+    footer p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
 
-        @media (max-width: 575.98px) { /* Extra small devices, stack everything */
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-            .hero-section p {
-                font-size: 1rem;
-            }
-            .section-title {
-                font-size: 1.5rem;
-            }
-            .feature-box, .team-member-card, .news-card {
-                margin-bottom: 1.5rem;
-            }
-            .news-card-img-top {
-                height: 160px;
-            }
-            .news-card-title {
-                font-size: 1.2rem;
-            }
-            .news-card-body {
-                padding: 15px;
-            }
-            .news-card p {
-                font-size: 0.85rem;
-            }
-            .btn-meet-team {
-                width: 100%; /* Full width button */
-            }
-        }
-    </style>
+    footer .fab {
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.3s ease;
+    }
+
+    footer .fab:hover {
+      color: var(--primary-red);
+    }
+
+    footer iframe {
+      border-radius: 8px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Back to Top Arrow */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--gradient-primary);
+      color: white;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+      font-size: 1.3rem;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-7px) scale(1.1);
+      background: var(--dark-red);
+      box-shadow: var(--shadow-xl);
+      color: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 991.98px) {
+      .hero-section h1 {
+        font-size: 3.5rem;
+      }
+      .hero-section p {
+        font-size: 1.5rem;
+      }
+      .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+      }
+      .feature-box {
+        margin-bottom: 2rem;
+      }
+      .team-member-card {
+        margin-bottom: 1.5rem;
+      }
+      .news-card {
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .hero-section {
+        height: 80vh;
+      }
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+      .hero-section p {
+        font-size: 1.2rem;
+      }
+      .hero-section .btn-primary {
+        font-size: 1rem;
+        padding: 10px 25px;
+      }
+      .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+      .section-title::after {
+        width: 70px;
+        height: 4px;
+      }
+      .features-section,
+      .main-content-section,
+      .team-section,
+      .news-section,
+      footer {
+        padding: 40px 0;
+      }
+      .feature-box {
+        padding: 25px 15px;
+      }
+      .feature-box i {
+        font-size: 3rem;
+      }
+      .feature-box h5 {
+        font-size: 1.3rem;
+      }
+      .feature-box p {
+        font-size: 0.9rem;
+      }
+      .main-content-section p {
+        font-size: 1rem;
+      }
+      .team-member-card img {
+        width: 120px;
+        height: 120px;
+      }
+      .news-card-img-top {
+        height: 180px;
+      }
+      .news-card-title {
+        font-size: 1.4rem;
+      }
+      .news-card p {
+        font-size: 0.95rem;
+      }
+      .news-card .btn-light {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+      }
+      .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
+      footer h5 {
+        font-size: 1.2rem;
+      }
+      footer p {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+      .hero-section p {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .feature-box,
+      .team-member-card,
+      .news-card {
+        margin-bottom: 1.5rem;
+      }
+      .news-card-img-top {
+        height: 160px;
+      }
+      .news-card-title {
+        font-size: 1.2rem;
+      }
+      .news-card-body {
+        padding: 15px;
+      }
+      .news-card p {
+        font-size: 0.85rem;
+      }
+      .btn-meet-team {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-              <img src="https://i.ibb.co/hfbKPcG/logo-1.png" alt="ESPSA Logo" width="40" height="40" class="d-inline-block align-text-top">
-              ESPSA
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="competition.html">Competition</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="events.html">Events</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-              </ul>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="https://i.ibb.co/hfbKPcG/logo-1.png" alt="ESPSA Logo" width="40" height="40" class="d-inline-block align-text-top">
+        ESPSA
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="competition.html">Competition</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Empowering Scientists of Tomorrow</h1>
+      <p>Innovate. Collaborate. Succeed.</p>
+      <a href="join.html" class="btn btn-primary">Join Us</a>
+    </div>
+  </section>
+
+  <main class="container my-5">
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+      <div class="container">
+        <h2 class="section-title">What We Offer</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-box">
+              <i class="fas fa-flask"></i>
+              <h5>Research Opportunities</h5>
+              <p>Engage in cutting-edge research projects and explore the scientific discoveries of tomorrow.</p>
             </div>
           </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <h1>Empowering Scientists of Tomorrow</h1>
-            <p>Innovate. Collaborate. Succeed.</p>
-            <a href="join.html" class="btn btn-primary">Join Us</a>
+          <div class="col-md-4">
+            <div class="feature-box">
+              <i class="fas fa-robot"></i>
+              <h5>Technology Workshops</h5>
+              <p>Participate in hands-on workshops to enhance your technical skills and knowledge in modern tech.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-box">
+              <i class="fas fa-users"></i>
+              <h5>Community Engagement</h5>
+              <p>Join a vibrant community of like-minded individuals and network with experts in the field.</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <main class="container my-5">
-        <!-- Features Section -->
-        <section id="features" class="features-section">
-            <div class="container">
-                <h2 class="section-title">What We Offer</h2>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="feature-box">
-                            <i class="fas fa-flask"></i>
-                            <h5>Research Opportunities</h5>
-                            <p>Engage in cutting-edge research projects and explore the scientific discoveries of tomorrow.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="feature-box">
-                            <i class="fas fa-robot"></i>
-                            <h5>Technology Workshops</h5>
-                            <p>Participate in hands-on workshops to enhance your technical skills and knowledge in modern tech.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="feature-box">
-                            <i class="fas fa-users"></i>
-                            <h5>Community Engagement</h5>
-                            <p>Join a vibrant community of like-minded individuals and network with experts in the field.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- About ESPSA Section -->
+    <section class="main-content-section">
+      <h2 class="section-title">About ESPSA</h2>
+      <p>ESPSA Club empowers Pharm D students on their educational and professional journeys. We provide essential resources, host exciting events, and foster a vibrant community where future pharmacists can excel. Our mission goes beyond organizing activities—we aim to deliver real value. By joining us, you'll gain practical skills in design, research, and scientific writing, and collaborate on impactful projects. We prioritize effective time management to ensure every moment spent with us is meaningful and rewarding. Connect with ESPSA to enhance your academic experience and innovate in the pharmaceutical field. Stay tuned for more exciting opportunities!</p>
 
-        <!-- About ESPSA Section -->
-        <section class="main-content-section">
-            <h2 class="section-title">About ESPSA</h2>
-            <p>ESPSA Club empowers Pharm D students on their educational and professional journeys. We provide essential resources, host exciting events, and foster a vibrant community where future pharmacists can excel. Our mission goes beyond organizing activities—we aim to deliver real value. By joining us, you'll gain practical skills in design, research, and scientific writing, and collaborate on impactful projects. We prioritize effective time management to ensure every moment spent with us is meaningful and rewarding. Connect with ESPSA to enhance your academic experience and innovate in the pharmaceutical field. Stay tuned for more exciting opportunities!</p>
+      <h2 class="section-title">Our Aim</h2>
+      <p>To enrich the student experience through scientific events, professional development, and community engagement. We aim to bridge the gap between academia and practice by offering impactful research opportunities, inspiring guest talks, medical convoys, internships, creative competitions, and practical application of your knowledge, fostering a culture of excellence, collaboration, and meaningful change within the pharmacy community at E-JUST.</p>
 
-            <h2 class="section-title">Our Aim</h2>
-            <p>To enrich the student experience through scientific events, professional development, and community engagement. We aim to bridge the gap between academia and practice by offering impactful research opportunities, inspiring guest talks, medical convoys, internships, creative competitions, and practical application of your knowledge, fostering a culture of excellence, collaboration, and meaningful change within the pharmacy community at E-JUST.</p>
+      <h2 class="section-title">Our Vision</h2>
+      <p>We focus on enriching the academic journey of pharmacy students at E-JUST University with a spirit of fun and creativity, providing a refreshing break from faculty stress. To empower students with new skills and meaningful experiences through engaging, inspiring events, innovative opportunities, internships, and activities while shaping bold thinkers, skilled researchers, and responsible leaders ready to make their way beyond the lecture hall.</p>
+    </section>
 
-            <h2 class="section-title">Our Vision</h2>
-            <p>We focus on enriching the academic journey of pharmacy students at E-JUST University with a spirit of fun and creativity, providing a refreshing break from faculty stress. To empower students with new skills and meaningful experiences through engaging, inspiring events, innovative opportunities, internships, and activities while shaping bold thinkers, skilled researchers, and responsible leaders ready to make their way beyond the lecture hall.</p>
-        </section>
+    <!-- Academic Supervisor & Team Section -->
+    <section class="team-section">
+      <h2 class="section-title">Academic Supervisor</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 text-center mb-4">
+          <div class="team-member-card">
+            <img src="https://i.ibb.co/1bWvb3T/DR-Mahmoud-Soliman-1.jpg" alt="DR Mahmoud Soliman" class="rounded-circle mb-2" style="width:150px; height:150px; object-fit: cover;">
+            <h4>DR Mahmoud Soliman</h4>
+            <p>Academic Supervisor</p>
+          </div>
+        </div>
+      </div>
 
-        <!-- Academic Supervisor & Team Section -->
-        <section class="team-section">
-            <h2 class="section-title">Academic Supervisor</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-4 text-center mb-4">
-                    <div class="team-member-card">
-                        <img src="https://i.ibb.co/1bWvb3T/DR-Mahmoud-Soliman-1.jpg" alt="DR Mahmoud Soliman" class="rounded-circle mb-2" style="width:150px; height:150px; object-fit: cover;">
-                        <h4>DR Mahmoud Soliman</h4>
-                        <p>Academic Supervisor</p>
-                    </div>
-                </div>
-            </div>
-            
-          
       <h2 class="section-title">Our Team</h2>
       <div class="row justify-content-center g-4">
-        <div class="col-md-6 col-lg-4 text-center">
+        <!-- Founder & President -->
+        <div class="col-md-6 col-lg-3 text-center">
           <div class="team-member-card">
             <img src="https://i.ibb.co/Qm626Qs/Remon-Yasser-1.jpg" alt="Remon Yasser">
             <h4>Remon Yasser</h4>
             <p>Founder and President</p>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4 text-center">
+        <!-- Executive President -->
+        <div class="col-md-6 col-lg-3 text-center">
+          <div class="team-member-card">
+            <img src="https://i.ibb.co/fzPMc2sQ/image.png" alt="Menna Maher">
+            <h4>Menna Maher</h4>
+            <p>Executive President</p>
+          </div>
+        </div>
+        <!-- Vice President (Meselhy) -->
+        <div class="col-md-6 col-lg-3 text-center">
           <div class="team-member-card">
             <img src="https://i.ibb.co/27DqyfP/Mahmoud-1.jpg" alt="Mahmoud Meselhy">
             <h4>Mahmoud Meselhy</h4>
-            <p>Vice Chief Officer</p>
+            <p>Vice President</p>
+          </div>
+        </div>
+        <!-- Executive Vice President -->
+        <div class="col-md-6 col-lg-3 text-center">
+          <div class="team-member-card">
+            <img src="https://i.ibb.co/m5DzJkT2/Mohamed-Ebrahim-Executive-Vice-President.png" alt="Mohamed Ebrahim">
+            <h4>Mohamed Ebrahim</h4>
+            <p>Executive Vice President</p>
           </div>
         </div>
       </div>
 
       <div class="text-center my-5">
-        <a href="espsa_board.html" class="btn btn-meet-team" style="background: var(--gradient-primary); color: white; border-radius: 30px; padding: 12px 30px; font-weight: 600;">Meet Our Team</a>
+        <a href="espsa_board.html" class="btn btn-meet-team">Meet Our Team</a>
       </div>
     </section>
 
-        <!-- News & Updates Section -->
-        <section id="news" class="news-section">
-            <div class="container">
-                <h2 class="text-center section-title">Latest News & Updates</h2>
-                <div class="row g-4">
-                    <!-- News Card 1: ESPSA Research Rally Competition 2025 (Prominent) -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="news-card">
-                            <img src="https://i.ibb.co/yFxwpT7t/soon.png" class="card-img-top news-card-img-top" alt="ESPSA Research Rally 2025">
-                            <div class="news-card-body">
-                                <h5 class="news-card-title">ESPSA Research Rally Competition 2025</h5>
-                                <p>Get ready for our flagship event! Discover this year's innovative challenges and key focus areas.</p>
-                                <a href="2025.html" class="btn btn-light">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- News Card 2: Podcasts Announcement -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="news-card">
-                            <img src="https://i.ibb.co/wFJMcSw5/image.png" class="card-img-top news-card-img-top" alt="Podcasts Announcement">
-                            <div class="news-card-body">
-                                <h5 class="news-card-title">New Podcasts Announced!</h5>
-                                <p>Tune in to our latest podcasts featuring insights from pharmaceutical field professionals.</p>
-                                <a href="podcast.html" class="btn btn-light">Listen Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+    <!-- News & Updates Section -->
+    <section id="news" class="news-section">
+      <div class="container">
+        <h2 class="text-center section-title">Latest News & Updates</h2>
+        <div class="row g-4">
+          <!-- News Card 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="news-card">
+              <img src="https://i.ibb.co/yFxwpT7t/soon.png" class="card-img-top news-card-img-top" alt="ESPSA Research Rally 2025">
+              <div class="news-card-body">
+                <h5 class="news-card-title">ESPSA Research Rally Competition 2025</h5>
+                <p>Get ready for our flagship event! Discover this year's innovative challenges and key focus areas.</p>
+                <a href="2025.html" class="btn btn-light">Learn More</a>
+              </div>
             </div>
-        </section>
-    </main>
+          </div>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white py-4">
-        <div class="container">
-            <div class="row">
-                <!-- About ESPSA -->
-                <div class="col-md-4 mb-4">
-                    <h5>About ESPSA</h5>
-                    <p>ESPSA is a scientific club dedicated to fostering innovation, research, and collaboration among university students.</p>
-                </div>
-                <!-- Social Media Icons -->
-                <div class="col-md-4 mb-4 text-center">
-                    <h5>Follow Us</h5>
-                    <a href="https://www.facebook.com/profile.php?id=61555934623623" target="_blank" class="text-white me-3 fs-4">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://youtube.com/@espsa-scientific-club?si=561Sei2Qg08z_YQ4" target="_blank" class="text-white fs-4">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-                <!-- Google Maps Iframe -->
-                <div class="col-md-4 mb-4">
-                    <h5>Our Location</h5>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d867.2689952005741!2d29.560881086063883!3d30.863399426126538!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1728322047867!5m2!1sen!2seg" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+          <!-- News Card 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="news-card">
+              <img src="https://i.ibb.co/wFJMcSw5/image.png" class="card-img-top news-card-img-top" alt="Podcasts Announcement">
+              <div class="news-card-body">
+                <h5 class="news-card-title">New Podcasts Announced!</h5>
+                <p>Tune in to our latest podcasts featuring insights from pharmaceutical field professionals.</p>
+                <a href="podcast.html" class="btn btn-light">Listen Now</a>
+              </div>
             </div>
-            <div class="text-center mt-3">
-                &copy; 2025 ESPSA. All rights reserved.
-            </div>
+          </div>
+
         </div>
-    </footer>
-    <!-- Back to Top Arrow -->
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+      </div>
+    </section>
+  </main>
 
-    <!-- Bootstrap JS and Dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS for Animations and Back to Top -->
-    <script>
-        // Back to Top Button
-        const backToTop = document.querySelector('.back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('active');
-            } else {
-                backToTop.classList.remove('active');
-            }
-        });
+  <!-- Footer -->
+  <footer class="bg-black text-white py-4">
+    <div class="container">
+      <div class="row">
+        <!-- About ESPSA -->
+        <div class="col-md-4 mb-4">
+          <h5>About ESPSA</h5>
+          <p>ESPSA is a scientific club dedicated to fostering innovation, research, and collaboration among university students.</p>
+        </div>
+        <!-- Social Media Icons -->
+        <div class="col-md-4 mb-4 text-center">
+          <h5>Follow Us</h5>
+          <a href="https://www.facebook.com/profile.php?id=61555934623623" target="_blank" class="text-white me-3 fs-4">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://youtube.com/@espsa-scientific-club?si=561Sei2Qg08z_YQ4" target="_blank" class="text-white fs-4">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+        <!-- Google Maps Iframe -->
+        <div class="col-md-4 mb-4">
+          <h5>Our Location</h5>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d867.2689952005741!2d29.560881086063883!3d30.863399426126538!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1728322047867!5m2!1sen!2seg" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        &copy; 2025 ESPSA. All rights reserved.
+      </div>
+    </div>
+  </footer>
 
-        backToTop.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+  <!-- Back to Top Arrow -->
+  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Bootstrap JS and Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS for Back to Top -->
+  <script>
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
