@@ -6,615 +6,331 @@
     <title>ESPSA Research Rally: GET the future 2025</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Modern Variables */
         :root {
+            /* Core Palette */
             --primary-red: #dc3545;
-            --dark-red: #b91c1c;
-            --light-red: #fef2f2;
-            --gradient-primary: linear-gradient(135deg, #dc3545 0%, #991b1b 100%);
-            --gradient-secondary: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --deep-red: #8a121d;
+            --dark-bg: #0f1115;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            
+            /* Gradients & Effects */
+            --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FDB931 100%);
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text-main);
             overflow-x: hidden;
-            color: #333; /* Default text color */
         }
 
-        /* Navbar Styling */
+        /* --- NAVBAR (PRESERVED) --- */
         .navbar {
-            background-color: #000 !important; /* Ensure black background */
+            background-color: #000 !important;
             transition: all 0.3s ease-in-out;
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            padding: 0.8rem 0;
         }
-
         .navbar-brand {
             font-family: 'Oswald', sans-serif;
             font-weight: 700;
             font-size: 1.5rem;
             color: #fff !important;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-
         .navbar-nav .nav-link {
             color: rgba(255, 255, 255, 0.7) !important;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             font-weight: 500;
             padding: 0.8rem 1.2rem;
             border-radius: 8px;
         }
-
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link.active {
             color: var(--primary-red) !important;
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
-
-        /* Hero Section with Animated Background */
-        .hero-section {
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(220, 53, 69, 0.9) 0%, rgba(185, 28, 28, 0.9) 100%),
-                        url('https://i.ibb.co/yFxwpT7t/soon.png') center/cover no-repeat;
+        /* --- HERO SECTION --- */
+        .hero-modern {
+            position: relative;
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #1a1d21 0%, #000000 100%);
             display: flex;
             align-items: center;
-            position: relative;
+            justify-content: center;
             overflow: hidden;
-            color: white;
-            text-align: center;
+            padding-top: 80px;
         }
 
-        .hero-section::before {
-            content: '';
+        .hero-particles {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dc3545' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: slideBackground 60s linear infinite;
         }
 
         .hero-content {
-            position: relative;
             z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 20px;
         }
 
-        .hero-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 4rem;
-            font-weight: 700;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: rgba(255,255,255,0.9);
+        .hero-logo-img {
+            max-width: 400px; /* Adjust size of logo */
+            width: 100%;
+            height: auto;
             margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.3s both;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.1));
         }
 
-        .hero-cta {
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Section Titles */
-        .section-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #adb5bd;
+            padding: 10px 25px;
+            border-radius: 50px;
             font-weight: 600;
-            color: var(--primary-red);
-            position: relative;
-            margin-bottom: 3rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+            margin-bottom: 1.5rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #6c757d;
+            border-radius: 50%;
+            margin-right: 10px;
+            box-shadow: 0 0 5px rgba(108, 117, 125, 0.5);
+        }
+
+        /* --- SECTION HEADERS --- */
+        .section-header {
+            margin-bottom: 4rem;
             text-align: center;
         }
 
-        .section-title::after {
+        .section-header h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: var(--dark-bg);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
             content: '';
             position: absolute;
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 50px;
             height: 4px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
+            background: var(--primary-red);
         }
 
-        /* Modern Cards */
+        /* --- CHALLENGE CARDS --- */
         .challenge-card {
-            border: none;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .challenge-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .media-container {
+            background: #000;
             position: relative;
         }
 
-        .challenge-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-            transform-origin: left;
+        .media-container iframe {
+            width: 100%;
+            height: 350px; /* Fixed height */
+            border: none;
         }
 
-        .challenge-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
+        .card-content {
+            padding: 2rem;
+            flex-grow: 1;
         }
 
-        .challenge-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .challenge-icon {
-            width: 80px;
-            height: 80px;
+        .card-icon-float {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-red);
+            color: white;
             border-radius: 50%;
-            background: var(--gradient-primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            font-size: 2rem;
+            font-size: 1.5rem;
+            margin-top: -50px;
+            margin-left: 20px;
+            position: relative;
+            z-index: 10;
+            border: 4px solid white;
+        }
+
+        .focus-pill {
+            font-size: 0.75rem;
+            background: #f1f3f5;
+            color: #495057;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 2px;
+        }
+
+        /* --- NEW WINNERS SECTION --- */
+        .winners-section {
+            background: linear-gradient(180deg, #fff 0%, #fff9f9 100%);
+            padding: 6rem 0;
             position: relative;
             overflow: hidden;
         }
 
-        .challenge-icon::before {
+        .winner-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.03);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+
+        .winner-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(220, 53, 69, 0.2);
+            box-shadow: 0 20px 50px rgba(220, 53, 69, 0.1);
+        }
+
+        /* Gold/Winner Accent */
+        .winner-card::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.5s ease;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            background: var(--gradient-gold);
+            border-radius: 20px 20px 0 0;
         }
 
-        .challenge-card:hover .challenge-icon::before {
-            width: 100px;
-            height: 100px;
-        }
-
-        .challenge-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary-red);
-            margin-bottom: 1rem;
-        }
-
-        .challenge-description {
-            color: #64748b;
-            line-height: 1.7;
+        .winner-logo-container {
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1.5rem;
+            padding: 10px;
+            background: #fff;
+            border-radius: 12px;
         }
 
-        .key-focus {
-            background: var(--light-red);
-            border-radius: 10px;
-            padding: 1rem;
-            margin-top: 1rem;
+        .winner-logo {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
         }
 
-        .key-focus-title {
-            font-weight: 600;
+        .winner-card:hover .winner-logo {
+            transform: scale(1.05);
+        }
+
+        .winner-badge {
+            background: var(--gradient-gold);
+            color: #5e4604;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .winner-category {
             color: var(--primary-red);
-            margin-bottom: 0.5rem;
+            font-weight: 600;
             font-size: 0.9rem;
+            margin-bottom: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .focus-item {
-            font-size: 0.85rem;
-            color: #475569;
-            margin-bottom: 0.3rem;
-            padding-left: 1rem;
-            position: relative;
-        }
-
-        .focus-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.6rem;
-            width: 4px;
-            height: 4px;
-            background: var(--primary-red);
-            border-radius: 50%;
-        }
-
-        /* NEW: Winners section styling */
-        .winner-section {
-            margin-top: 1.75rem;
-            padding: 1rem;
-            border-radius: 12px;
-            background: #fff7f7;
-            border: 1px dashed rgba(220, 53, 69, 0.2);
-        }
-
-        .winner-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.35rem 0.8rem;
-            border-radius: 999px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            background: var(--gradient-primary);
-            color: #fff;
-        }
-
-        .winner-badge i {
-            margin-right: 0.4rem;
-        }
-
-        .winner-logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            object-fit: cover;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .winner-name {
-            font-weight: 700;
-            font-size: 1rem;
-            color: #1f2933;
-        }
-
-        /* New: Wrapper for embedded content */
-        .challenge-media-wrapper {
-            width: 100%;
-            overflow: hidden; /* Important for border-radius on iframe */
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            background-color: #f0f0f0; /* Background for loading state or iframes */
-        }
-
-        .challenge-media-wrapper iframe {
-            width: 100%; /* Make iframe responsive */
-            border: none;
-            display: block; /* Remove extra space below iframe */
-        }
-
-
-        /* Timeline Enhancement */
-        .timeline-section {
-            background: var(--gradient-secondary);
-            position: relative;
-        }
-
-        .timeline-container {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding-top: 20px; /* Add padding to prevent content from touching top */
-            padding-bottom: 20px; /* Add padding to prevent content from touching bottom */
-        }
-
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: var(--gradient-primary);
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin: 3rem 0;
-            opacity: 0;
-            animation: slideInTimeline 0.6s ease forwards;
-        }
-
-        .timeline-item:nth-child(even) {
-            animation-delay: 0.2s;
-        }
-
-        .timeline-item:nth-child(odd) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes slideInTimeline {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .timeline-content {
+        /* --- TIMELINE --- */
+        .timeline-box {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            width: 45%;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-left: 4px solid #dee2e6; /* Default gray */
+        }
+        
+        /* Highlight past/completed events */
+        .timeline-box.completed {
+            border-left-color: var(--text-main);
+            opacity: 0.7;
+        }
+        
+        /* Highlight the final event */
+        .timeline-box.grand-finale {
+            border-left-color: var(--primary-red);
+            background: #fff5f5;
         }
 
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-right: auto;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-left: auto;
-        }
-
-        .timeline-date {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--gradient-primary);
+        /* --- FOOTER (PRESERVED) --- */
+        footer {
+            background-color: #000;
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            z-index: 10; /* Ensure date is above timeline line */
+            padding: 3rem 0;
+            border-top: 1px solid #222;
         }
-
-        /* CTA Section */
-        .cta-section {
-            background: var(--gradient-primary);
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(255,255,255,0.05) 10px,
-                rgba(255,255,255,0.05) 20px
-            );
-            animation: movePattern 20s linear infinite;
-        }
-
-        @keyframes movePattern {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .btn-custom {
-            background: white;
+        footer h5 {
+            font-family: 'Oswald', sans-serif;
             color: var(--primary-red);
-            border: none;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 1.5rem;
         }
 
-        .btn-custom::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(220, 53, 69, 0.2), transparent);
-            transition: left 0.5s ease;
+        @media (max-width: 768px) {
+            .hero-logo-img { max-width: 280px; }
+            .section-header h2 { font-size: 2.2rem; }
+            .media-container iframe { height: 300px; }
         }
-
-        .btn-custom:hover::before {
-            left: 100%;
-        }
-
-        .btn-custom:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        /* Floating Elements */
-        .floating-shape {
-            position: absolute;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-shape:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-shape:nth-child(2) {
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .floating-shape:nth-child(3) {
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 991.98px) { /* Medium to small devices */
-            .hero-title {
-                font-size: 3rem;
-            }
-            .hero-subtitle {
-                font-size: 1.3rem;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-            .challenge-card {
-                margin-bottom: 2rem; /* Add spacing between cards on smaller screens */
-            }
-            .timeline-content {
-                width: 85%; /* Wider timeline content */
-            }
-        }
-
-        @media (max-width: 767.98px) { /* Extra small devices */
-            .hero-title {
-                font-size: 2.2rem;
-            }
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            .hero-cta .btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-            }
-            .section-title {
-                font-size: 1.8rem;
-                text-align: center !important; /* Ensure centered on mobile */
-            }
-            .section-title::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .timeline-line {
-                left: 1.5rem; /* Adjust timeline line position */
-            }
-            .timeline-item {
-                margin: 2rem 0; /* Adjust margin for timeline items */
-            }
-            .timeline-content {
-                width: calc(100% - 3rem); /* Full width minus line offset */
-                margin-left: 3rem !important; /* Push content to the right of the line */
-                padding: 1.5rem;
-            }
-            .timeline-date {
-                left: 1.5rem;
-                transform: translateX(-50%) translateY(-50%); /* Center relative to new line position */
-            }
-            .back-to-top {
-                bottom: 1.5rem;
-                right: 1.5rem;
-                width: 45px;
-                height: 45px;
-                font-size: 1rem;
-            }
-            .navbar-brand img {
-                width: 35px;
-                height: 35px;
-            }
-            .navbar-nav .nav-link {
-                padding: 0.5rem 1rem;
-            }
-            .challenge-card .card-body {
-                padding: 1.5rem;
-            }
-            .challenge-title {
-                font-size: 1.3rem;
-            }
-            .challenge-description {
-                font-size: 0.95rem;
-            }
-            .key-focus-title {
-                font-size: 0.8rem;
-            }
-            .focus-item {
-                font-size: 0.8rem;
-            }
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--gradient-primary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 1000;
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            color: white;
+        
+        @keyframes slideBackground {
+            from { background-position: 0 0; }
+            to { background-position: 100% 100%; }
         }
     </style>
 </head>
@@ -627,238 +343,121 @@
                 <img src="https://i.ibb.co/hfbKPcG/logo-1.png" alt="ESPSA Logo" width="40" height="40" class="d-inline-block align-text-top">
                 ESPSA
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="competition.html">Competition</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="events.html">Events</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="competition.html">Competition</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="floating-shape">
-            <i class="fas fa-dna fa-3x"></i>
-        </div>
-        <div class="floating-shape">
-            <i class="fas fa-microscope fa-2x"></i>
-        </div>
-        <div class="floating-shape">
-            <i class="fas fa-pills fa-2x"></i>
-        </div>
+    <section class="hero-modern">
+        <div class="hero-particles"></div>
         
-        <div class="container">
-            <div class="hero-content text-center">
-                <h1 class="hero-title">ESPSA Research Rally 2025</h1>
-                <p class="hero-subtitle">Innovative Solutions for Tomorrow's Healthcare Challenges</p>
-                <div class="hero-cta">
-                    <a href="#challenges" class="btn btn-custom btn-lg me-3">Explore Challenges</a>
-                    <a href="#timeline" class="btn btn-outline-light btn-lg">View Timeline</a>
+        <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
+            
+            <!-- Competition Logo -->
+            <img src="https://i.ibb.co/KjqvxyCG/Research-Rally-2-black-competeion-logo.png" 
+                 alt="Research Rally 2025" 
+                 class="hero-logo-img">
+            
+            <!-- Status Indicator -->
+            <div>
+                <div class="status-badge">
+                    <div class="status-dot"></div>
+                    Registration Closed
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Overview Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="section-title text-start">Competition Overview</h2>
-                    <p class="lead mb-4">Join us for the most innovative scientific competition of 2025, where brilliant minds come together to solve real-world healthcare challenges.</p>
-                    <p>The ESPSA Research Rally 2025 focuses on cutting-edge pharmaceutical and healthcare solutions that address global challenges in telemedicine, sustainability, and emergency preparedness.</p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row g-3">
-                        <div class="col-6">
-                            <div class="text-center p-3 bg-white rounded-3 shadow-sm h-100">
-                                <i class="fas fa-users text-danger fa-2x mb-2"></i>
-                                <h5>Teams</h5>
-                                <p class="mb-0">Multi-disciplinary collaboration</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="text-center p-3 bg-white rounded-3 shadow-sm h-100">
-                                <i class="fas fa-lightbulb text-danger fa-2x mb-2"></i>
-                                <h5>Innovation</h5>
-                                <p class="mb-0">Creative problem-solving</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="text-center p-3 bg-white rounded-3 shadow-sm h-100">
-                                <i class="fas fa-globe text-danger fa-2x mb-2"></i>
-                                <h5>Impact</h5>
-                                <p class="mb-0">Global healthcare solutions</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="text-center p-3 bg-white rounded-3 shadow-sm h-100">
-                                <i class="fas fa-award text-danger fa-2x mb-2"></i>
-                                <h5>Recognition</h5>
-                                <p class="mb-0">Cash prizes & certificates</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <p class="text-white-50 fs-5 mb-4">
+                Innovative Solutions for Tomorrow's Healthcare Challenges
+            </p>
+            
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="#winners" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-bold">
+                    <i class="fas fa-trophy me-2"></i> View Winners
+                </a>
+                <a href="#challenges" class="btn btn-danger btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg">
+                    View Challenges
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Challenges Section -->
     <section id="challenges" class="py-5">
-        <div class="container">
-            <h2 class="section-title">2025 Challenge Areas</h2>
-            
+        <div class="container py-5">
+            <div class="section-header" data-aos="fade-up">
+                <h2>The Challenges</h2>
+                <p class="mt-3 text-muted">The three tracks where innovation met reality</p>
+            </div>
+
             <div class="row g-4">
-                <!-- Challenge 1: Telemedicine -->
-                <div class="col-lg-4">
-                    <div class="challenge-card h-100">
-                        <div class="challenge-media-wrapper">
-                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0xReACvLNBFdLM242LV7d4YfBaQy4PT9LciuH6G8rL1bMDEkps3o1FNKA2f9Kbdo8l%26id%3D61555934623623&show_text=true&width=500" width="100%" height="707" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <!-- Challenge 1 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="challenge-card">
+                        <div class="media-container">
+                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0xReACvLNBFdLM242LV7d4YfBaQy4PT9LciuH6G8rL1bMDEkps3o1FNKA2f9Kbdo8l%26id%3D61555934623623&show_text=true&width=500" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                         </div>
-                        <div class="card-body p-4">
-                            <div class="challenge-icon">
-                                <i class="fas fa-laptop-medical"></i>
-                            </div>
-                            <h3 class="challenge-title">Telemedicine for Underserved Areas</h3>
-                            <p class="challenge-description">
-                                How can telemedicine strategies improve delivery of temperature-sensitive medicines to remote regions lacking proper healthcare infrastructure?
-                            </p>
-                            
-                            <div class="key-focus">
-                                <div class="key-focus-title">Key Focus Areas:</div>
-                                <div class="focus-item">Target populations with limited healthcare access</div>
-                                <div class="focus-item">Overcome technology barriers</div>
-                                <div class="focus-item">Develop step-by-step implementation plan</div>
-                                <div class="focus-item">Ensure financial sustainability</div>
-                                <div class="focus-item">Maintain medication viability during transport</div>
-                                <div class="focus-item">Create affordable pricing structure</div>
-                                <div class="focus-item">Establish stakeholder communication</div>
-                                <div class="focus-item">Guarantee accessibility for vulnerable groups</div>
-                            </div>
-
-                            <!-- Winner: Last Mile Medics -->
-                            <div class="winner-section">
-                                <div class="winner-badge">
-                                    <i class="fas fa-trophy"></i> 2025 Winner
-                                </div>
-                                <div class="d-flex align-items-center mt-3">
-                                    <img src="https://i.ibb.co/1fWD8RNc/Last-Mile-Medics.png" 
-                                         alt="Last Mile Medics Logo" 
-                                         class="winner-logo me-3">
-                                    <div>
-                                        <div class="winner-name">Last Mile Medics</div>
-                                        <small class="text-muted">Telemedicine for Underserved Areas</small>
-                                    </div>
-                                </div>
+                        <div class="card-icon-float">
+                            <i class="fas fa-laptop-medical"></i>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="fw-bold">Telemedicine Access</h4>
+                            <p class="text-muted small mb-3">Strategies to improve delivery of temperature-sensitive medicines to remote regions lacking infrastructure.</p>
+                            <div class="d-flex flex-wrap">
+                                <span class="focus-pill">Accessibility</span>
+                                <span class="focus-pill">Technology</span>
+                                <span class="focus-pill">Cold Chain</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Challenge 2: Green Pharma -->
-                <div class="col-lg-4">
-                    <div class="challenge-card h-100">
-                        <div class="challenge-media-wrapper">
-                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0iGpR3fkGZ25ZBygj2eKn51vh75dJXdirc6V2XeTJM5UuGzrp1ZszvkpujDJ3AHD6l%26id%3D61555934623623&show_text=true&width=500" width="100%" height="681" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <!-- Challenge 2 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="challenge-card">
+                        <div class="media-container">
+                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0iGpR3fkGZ25ZBygj2eKn51vh75dJXdirc6V2XeTJM5UuGzrp1ZszvkpujDJ3AHD6l%26id%3D61555934623623&show_text=true&width=500" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                         </div>
-                        <div class="card-body p-4">
-                            <div class="challenge-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <h3 class="challenge-title">Green Pharma Implementation</h3>
-                            <p class="challenge-description">
-                                How can pharmaceutical companies adopt sustainable "Green Pharma" practices without compromising drug quality or affordability?
-                            </p>
-                            
-                            <div class="key-focus">
-                                <div class="key-focus-title">Key Focus Areas:</div>
-                                <div class="focus-item">Set measurable sustainability KPIs</div>
-                                <div class="focus-item">Develop eco-friendly manufacturing</div>
-                                <div class="focus-item">Implement sustainable packaging</div>
-                                <div class="focus-item">Ensure regulatory compliance</div>
-                                <div class="focus-item">Maintain cost-effectiveness</div>
-                                <div class="focus-item">Preserve product efficacy</div>
-                                <div class="focus-item">Create scalable global solutions</div>
-                                <div class="focus-item">Optimize green supply chain</div>
-                            </div>
-
-                            <!-- Winner: CO2nvert -->
-                            <div class="winner-section">
-                                <div class="winner-badge">
-                                    <i class="fas fa-trophy"></i> 2025 Winner
-                                </div>
-                                <div class="d-flex align-items-center mt-3">
-                                    <img src="https://i.ibb.co/BKTS403t/co2nvert.png" 
-                                         alt="CO2nvert Logo" 
-                                         class="winner-logo me-3">
-                                    <div>
-                                        <div class="winner-name">CO2nvert</div>
-                                        <small class="text-muted">Green Pharma Implementation</small>
-                                    </div>
-                                </div>
+                        <div class="card-icon-float">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="fw-bold">Green Pharma</h4>
+                            <p class="text-muted small mb-3">Adopting sustainable practices in pharmaceutical manufacturing without compromising quality.</p>
+                            <div class="d-flex flex-wrap">
+                                <span class="focus-pill">Sustainability</span>
+                                <span class="focus-pill">Cost Effective</span>
+                                <span class="focus-pill">Eco-Friendly</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Challenge 3: Emergency Preparedness -->
-                <div class="col-lg-4">
-                    <div class="challenge-card h-100">
-                        <div class="challenge-media-wrapper">
-                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid035Pgdy4xXGYdZR9TNEvQj8tQd7SMqBSoziTGiB9c7b1uh5edjiLC1R4aRda71J6Yl%26id%3D61555934623623&show_text=true&width=500" width="100%" height="660" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <!-- Challenge 3 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="challenge-card">
+                        <div class="media-container">
+                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid035Pgdy4xXGYdZR9TNEvQj8tQd7SMqBSoziTGiB9c7b1uh5edjiLC1R4aRda71J6Yl%26id%3D61555934623623&show_text=true&width=500" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                         </div>
-                        <div class="card-body p-4">
-                            <div class="challenge-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h3 class="challenge-title">Pharmacy Emergency Preparedness</h3>
-                            <p class="challenge-description">
-                                How can pharmacies develop robust emergency systems to maintain medication access during disasters or supply chain disruptions?
-                            </p>
-                            
-                            <div class="key-focus">
-                                <div class="key-focus-title">Key Focus Areas:</div>
-                                <div class="focus-item">Prioritize patient safety protocols</div>
-                                <div class="focus-item">Build resilient supply chains</div>
-                                <div class="focus-item">Create adaptable crisis response plans</div>
-                                <div class="focus-item">Improve coordination systems</div>
-                                <div class="focus-item">Design implementable local solutions</div>
-                                <div class="focus-item">Ensure regulatory compliance</div>
-                                <div class="focus-item">Develop rapid response mechanisms</div>
-                                <div class="focus-item">Address medication scarcity issues</div>
-                            </div>
-
-                            <!-- Winner: Vigilants -->
-                            <div class="winner-section">
-                                <div class="winner-badge">
-                                    <i class="fas fa-trophy"></i> 2025 Winner
-                                </div>
-                                <div class="d-flex align-items-center mt-3">
-                                    <img src="https://i.ibb.co/wNHncksb/vigilants.jpg" 
-                                         alt="Vigilants Logo" 
-                                         class="winner-logo me-3">
-                                    <div>
-                                        <div class="winner-name">Vigilants</div>
-                                        <small class="text-muted">Pharmacy Emergency Preparedness</small>
-                                    </div>
-                                </div>
+                        <div class="card-icon-float">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="fw-bold">Emergency Prep</h4>
+                            <p class="text-muted small mb-3">Developing robust emergency systems to maintain medication access during disasters.</p>
+                            <div class="d-flex flex-wrap">
+                                <span class="focus-pill">Crisis Management</span>
+                                <span class="focus-pill">Supply Chain</span>
+                                <span class="focus-pill">Resilience</span>
                             </div>
                         </div>
                     </div>
@@ -867,44 +466,112 @@
         </div>
     </section>
 
-    <!-- Timeline Section -->
-    <section id="timeline" class="timeline-section py-5">
+    <!-- NEW WINNERS SECTION -->
+    <section id="winners" class="winners-section">
         <div class="container">
-            <h2 class="section-title text-dark">Competition Timeline</h2>
-            
-            <div class="timeline-container">
-                <div class="timeline-line"></div>
+            <div class="section-header" data-aos="fade-up">
+                <span class="text-danger fw-bold text-uppercase ls-2">Hall of Fame</span>
+                <h2 class="mb-2">2025 Champions</h2>
+                <p class="text-muted">Celebrating the teams that shaped the future</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
                 
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 class="text-danger mb-3">Registration Opens</h4>
-                        <p class="mb-0">Team registration and challenge selection begins. Form your interdisciplinary teams and choose your challenge area.</p>
+                <!-- Winner 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="winner-card">
+                        <div class="winner-badge"><i class="fas fa-crown me-1"></i> Winner</div>
+                        <div class="winner-category">Telemedicine Track</div>
+                        <div class="winner-logo-container">
+                            <img src="https://i.ibb.co/ZyNwtpD/lastmile.png" alt="Last Mile Medics" class="winner-logo">
+                        </div>
+                        <h3 class="h4 fw-bold">Last Mile Medics</h3>
+                        <p class="text-muted small">Revolutionized rural delivery systems.</p>
                     </div>
-                    <div class="timeline-date">June 2025</div>
                 </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 class="text-danger mb-3">Proposal Submission</h4>
-                        <p class="mb-0">Submit your detailed project proposals with innovative solutions and implementation strategies.</p>
+
+                <!-- Winner 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="winner-card">
+                        <div class="winner-badge"><i class="fas fa-crown me-1"></i> Winner</div>
+                        <div class="winner-category">Green Pharma Track</div>
+                        <div class="winner-logo-container">
+                            <img src="https://i.ibb.co/LTKkGzv/co2nvert.png" alt="CO2nvert" class="winner-logo">
+                        </div>
+                        <h3 class="h4 fw-bold">CO2nvert</h3>
+                        <p class="text-muted small">Eco-friendly manufacturing solutions.</p>
                     </div>
-                    <div class="timeline-date">July 2025</div>
                 </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 class="text-danger mb-3">Development Phase</h4>
-                        <p class="mb-0">Develop prototypes, conduct research, and prepare your final presentations with mentoring support.</p>
+
+                <!-- Winner 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="winner-card">
+                        <div class="winner-badge"><i class="fas fa-crown me-1"></i> Winner</div>
+                        <div class="winner-category">Emergency Prep Track</div>
+                        <div class="winner-logo-container">
+                            <img src="https://i.ibb.co/v6hdcX6x/vigilants.png" alt="Vigilants" class="winner-logo">
+                        </div>
+                        <h3 class="h4 fw-bold">Vigilants</h3>
+                        <p class="text-muted small">Rapid response crisis protocols.</p>
                     </div>
-                    <div class="timeline-date">September 2025</div>
                 </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 class="text-danger mb-3">Final Presentations</h4>
-                        <p class="mb-0">Present your solutions to expert judges and compete for the grand prizes at the ESPSA Research Rally.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-header mb-5" data-aos="fade-up">
+                        <h2>Timeline</h2>
                     </div>
-                    <div class="timeline-date">13 October</div>
+                    
+                    <div class="vstack gap-4">
+                        <!-- Completed Item -->
+                        <div class="d-flex" data-aos="fade-up">
+                            <div class="flex-shrink-0 d-flex flex-column align-items-center" style="width: 50px;">
+                                <i class="fas fa-check-circle text-secondary fs-4"></i>
+                                <div class="h-100 border-start border-2 mt-2"></div>
+                            </div>
+                            <div class="flex-grow-1 ms-3 pb-4">
+                                <div class="timeline-box completed">
+                                    <h5 class="fw-bold">Registration & Proposals</h5>
+                                    <p class="text-muted mb-0">June - July 2025 (Completed)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Completed Item -->
+                        <div class="d-flex" data-aos="fade-up">
+                            <div class="flex-shrink-0 d-flex flex-column align-items-center" style="width: 50px;">
+                                <i class="fas fa-check-circle text-secondary fs-4"></i>
+                                <div class="h-100 border-start border-2 mt-2"></div>
+                            </div>
+                            <div class="flex-grow-1 ms-3 pb-4">
+                                <div class="timeline-box completed">
+                                    <h5 class="fw-bold">Development Phase</h5>
+                                    <p class="text-muted mb-0">September 2025 (Completed)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Final Item -->
+                        <div class="d-flex" data-aos="fade-up">
+                            <div class="flex-shrink-0 d-flex flex-column align-items-center" style="width: 50px;">
+                                <i class="fas fa-flag-checkered text-danger fs-4"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <div class="timeline-box grand-finale">
+                                    <h5 class="fw-bold text-danger">Grand Finale</h5>
+                                    <p class="text-dark mb-0">October 13, 2025</p>
+                                    <small class="text-muted">Winners Announced!</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -941,65 +608,26 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <!-- Bootstrap JS and Dependencies -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- Custom JavaScript -->
     <script>
-        // Back to Top Button
-        const backToTop = document.querySelector('.back-to-top');
-        
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+
+        // Navbar Scrolled State
+        const navbar = document.querySelector('.navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.4rem 0';
             } else {
-                backToTop.classList.remove('show');
+                navbar.style.padding = '0.8rem 0';
             }
-        });
-
-        backToTop.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll animation to timeline items
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.timeline-item').forEach(item => {
-            observer.observe(item);
         });
     </script>
 </body>
